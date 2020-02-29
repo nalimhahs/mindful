@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'pages',
     'forum',
     'news',
+    'docdash'
 ]
 
 MIDDLEWARE = [
