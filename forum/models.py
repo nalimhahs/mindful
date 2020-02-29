@@ -13,6 +13,9 @@ class Thread(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     tags = models.CharField(max_length=100, blank=True, null=True)
 
+    def __str__(self):
+        return self.title
+
 
 class Post(models.Model):
 
@@ -22,3 +25,6 @@ class Post(models.Model):
                              on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
     hidden = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.content[:10] + ':' +self.thread.title
