@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     # Local
     'users',
     'pages',
-    'forum'
+    'forum',
+    'news',
 ]
 
 MIDDLEWARE = [
