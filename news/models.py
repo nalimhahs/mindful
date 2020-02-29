@@ -6,13 +6,10 @@ class News(models.Model):
 
     title = models.CharField(max_length=200)
     author = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.CASCADE,
-        blank=True,
-        null=True,)
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, blank=True, null=True,)
     body = models.TextField()
-    pub_date = models.DateTimeField()
-    image = models.ImageField(upload_to='image/')
+    pub_date = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField()
 
     def __str__(self):
         return self.title

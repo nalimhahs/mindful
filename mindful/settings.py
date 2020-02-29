@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'crispy_forms',
     'debug_toolbar',
+    'storages',
 
     # Local
     'users',
@@ -208,3 +209,26 @@ LOGGING = {
         },
     }
 }
+
+AWS_ACCESS_KEY_ID = 'AKIAVH2B6UNUGH4XEIPS'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'crescita'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+
+AWS_DEFAULT_ACL = 'public-read'
+
+AWS_LOCATION = 'static'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+# STATIC_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+
+DEFAULT_FILE_STORAGE = 'mindful.storage_backends.MediaStorage'
+
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static")
+]
