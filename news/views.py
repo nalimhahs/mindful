@@ -4,7 +4,7 @@ from .models import News
 
 def allnews(request):
     news = News.objects
-    return render(request, 'templates/news/allnews.html', {'news': news})
+    return render(request, 'news/allnews.html', {'news': news})
 
 
 def detail(request, news_id):
