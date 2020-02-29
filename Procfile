@@ -1,1 +1,1 @@
-web: gunicorn posts.wsgi
+web: gunicorn mindful.wsgi
