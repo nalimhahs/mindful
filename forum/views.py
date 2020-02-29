@@ -26,7 +26,7 @@ class CreateNewThreadView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         thread = form.save(commit=False)
         thread.user = self.request.user
-        self.object = thread.save()
+        thread.save()
         self.pk = thread.id
         return super().form_valid(thread)
 
@@ -41,5 +41,22 @@ class ShowThreadView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['posts'] = Post.objects.filter(thread=self.get_object().pk )
+        context['posts'] = Post.objects.filter(thread=self.get_object().pk).order_by('created')
         return context
+
+
+class CreateNewPostView(LoginRequiredMixin, CreateView):
+
+    model = Post
+    template_name = 'forum/create-new-post.html'
+    fields = ('content',)
+
+    def form_valid(self, form):
+        post = form.save(commit=False)
+        post.user = self.request.user
+        post.thread = Thread.objects.get(pk=self.kwargs.get('pk'))
+        post.save()
+        return super().form_valid(post)
+
+    def get_success_url(self):
+        return reverse_lazy("show-thread", args=(self.kwargs.get('pk'), ))
