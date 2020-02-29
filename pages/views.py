@@ -1,17 +1,16 @@
 from django.urls import reverse_lazy, path
 from django.views.generic import CreateView, TemplateView
 
-from .models import Post
+from .models import Poster
 
 
 class HomePageView(CreateView):
-    model = Post
+    model = Poster
     fields = ['title', 'content']
     template_name = 'pages/home.html'
 
     def get_success_url(self):
         return reverse_lazy("home", args=[])  
-
 
     def form_valid(self, form):
         post = form.save(commit=False)
@@ -26,5 +25,5 @@ class PostListingView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['posts'] = Post.objects.all()
+        context['posts'] = Poster.objects.all()
         return context
