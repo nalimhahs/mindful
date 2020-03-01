@@ -10,8 +10,8 @@ from .models import Chat, ChatRoom
 def chatView(request, room):
 
     current_room = get_object_or_404(ChatRoom, pk=room)
-    if request.user != current_room.patient or request.user != current_room.doctor:
-        return Http404('Chat room not found!')
+    if request.user.id not in (current_room.patient.id, current_room.doctor.id):
+        raise  Http404('Chat room not found!')
     chats = Chat.objects.filter(room=current_room).order_by('created')
 
     if request.method == "POST":
@@ -19,9 +19,9 @@ def chatView(request, room):
         if form.is_valid():
             chat = form.save(commit=False)
             chat.user = request.user
-            chat.room = room
+            chat.room = current_room
             chat.save()
-            return redirect('chat-view', pk=room)
+            return redirect('chat-view', room=room)
     else:
         form = ChatForm()
 

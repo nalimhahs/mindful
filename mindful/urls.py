@@ -9,7 +9,8 @@ urlpatterns = [
     path('', include('pages.urls')),
     path('forum/', include('forum.urls')),
     path('news/', include('news.urls')),
-    path('doc/', include('docdash.urls')),    
+    path('doc/', include('docdash.urls')),
+    path('chat/', include('livechat.urls')),    
 ]
 
 if settings.DEBUG:
