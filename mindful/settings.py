@@ -52,7 +52,8 @@ INSTALLED_APPS = [
     'forum',
     'news',
     'docdash',
-    'livechat'
+    'livechat',
+    'events',
 ]
 
 MIDDLEWARE = [

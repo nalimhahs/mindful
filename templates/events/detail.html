@@ -8,7 +8,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="description" content="Responsive Bootstrap 4 and web Application ui kit.">
 
-    <title>Detail</title>
+    <title>Event Details</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Favicon-->
     <link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
@@ -480,14 +480,14 @@
                 <div class="col-lg-8 col-md-12">
                     <div class="card single_post">
                         <div class="body">
-                            <h3 class="m-t-0 m-b-5"><a href="blog-details.html">{{new.title}}</a></h3>
+                            <h3 class="m-t-0 m-b-5"><a href="blog-details.html">{{event.title}}</a></h3>
                             <ul class="meta">
-                                <li><a href="#"><i class="zmdi zmdi-account col-blue"></i>Posted By: {{new.author}}</a></li>
+                                <li><a href="#"><i class="zmdi zmdi-account col-blue"></i>Posted By: {{event.author}}</a></li>
                                 <li><a href="#"><i class="zmdi zmdi-label col-red"></i>Health</a></li>
-                                <li><a href="#"><i class="zmdi zmdi-comment-text col-blue"></i>{{new.pub_date}}</a></li>
+                                <li><a href="#"><i class="zmdi zmdi-comment-text col-blue"></i>{{event.pub_date}}</a></li>
                             </ul>
                             <div class="img-post m-b-15">
-                                <img src="{{new.image.url}}" alt="Awesome Image">
+                                <img src="{{event.image.url}}" alt="Awesome Image">
                                 <div class="social_share">
                                     <button class="btn btn-primary btn-icon btn-icon-mini btn-round"><i
                                             class="zmdi zmdi-facebook"></i></button>
@@ -497,25 +497,25 @@
                                             class="zmdi zmdi-instagram"></i></button>
                                 </div>
                             </div>
-                            <p>{{new.body}}</p>
+                            <p>{{event.body}}</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12 right-box">
                     <div class="card widget popular-post">
                         <div class="header">
-                            <h2><strong>Popular</strong> Posts</h2>
+                            <h2><strong>Popular</strong> Events</h2>
                         </div>
-                        {% for news in news.all|slice:"2" %}
+                        {% for events in events.all|slice:"2" %}
                         <div class="body m-b-10">
                             <div class="single_post">
                                 <a href="#">
                                     <div class="img-post m-b-5">
-                                        <img src="{{news.image.url}}"
+                                        <img src="{{events.image.url}}"
                                             alt="Awesome Image">
                                     </div>
-                                    <p class="m-b-0">{{news.title}}</p>
-                                    <small class="text-muted">{{news.pub_date}}</small>
+                                    <p class="m-b-0">{{events.title}}</p>
+                                    <small class="text-muted">{{events.pub_date}}</small>
                                 </a>
                             </div>
                         </div>
