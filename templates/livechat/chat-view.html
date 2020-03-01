@@ -1,0 +1,13 @@
+<h1>{{ room }}</h1>
+<br>
+{% for chat in chats %}
+    {% if user = chat.user %}
+        <p style="color: blue;">{{chat.message}}</p>
+    {% else %}
+        <p style="color: red;">{{chat.message}}</p>
+    {% endif %}
+{% endfor %}
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Save">
+</form>
