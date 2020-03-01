@@ -12,6 +12,9 @@ class ChatRoom(models.Model):
     def __str__(self):
         return self.patient.username + ':' + self.doctor.username
 
+    class Meta:
+        unique_together = ('patient', 'doctor')
+
 
 class Chat(models.Model):
 
