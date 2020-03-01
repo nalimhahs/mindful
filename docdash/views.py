@@ -12,3 +12,13 @@ def doctorMainDashboard(request):
         post__in=Post.objects.filter(user=request.user)).order_by('-created')
 
     return render(request, 'docdash/home.html', {'active_threads': active_threads})
+
+
+@login_required
+@is_doctor
+def listAllActiveThreads(request):
+
+    active_threads = Thread.objects.filter(
+        post__in=Post.objects.filter(user=request.user)).order_by('-created')
+
+    return render(request, 'docdash/allthreads.html', {'active_threads': active_threads})
