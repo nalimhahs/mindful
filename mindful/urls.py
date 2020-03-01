@@ -12,6 +12,7 @@ urlpatterns = [
     path('doc/', include('docdash.urls')),
     path('chat/', include('livechat.urls')),  
     path('events/', include('events.urls')),
+    path('contacts/', include('contact.urls')),
 ]
 
 if settings.DEBUG:

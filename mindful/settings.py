@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'docdash',
     'livechat',
     'events',
+    'contact',
 ]
 
 MIDDLEWARE = [
