@@ -16,6 +16,11 @@ django-heroku = "*"
 pillow = "*"
 django-storages = "*"
 boto3 = "*"
+pandas = "*"
+numpy = "*"
+tweepy = "*"
+xlrd = "*"
+sklearn = "*"
 
 [requires]
 python_version = "3.8"

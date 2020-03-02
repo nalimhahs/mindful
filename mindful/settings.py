@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'livechat',
     'events',
     'contact',
+    'socialanalysis',
 ]
 
 MIDDLEWARE = [
