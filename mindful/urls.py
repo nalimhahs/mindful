@@ -13,6 +13,7 @@ urlpatterns = [
     path('chat/', include('livechat.urls')),  
     path('events/', include('events.urls')),
     path('contacts/', include('contact.urls')),
+    path('location/', include('location.urls')),
 ]
 
 if settings.DEBUG:
