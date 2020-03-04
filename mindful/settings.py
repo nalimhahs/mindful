@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'events',
     'contact',
     'location',
+    'socialanalysis',
 ]
 
 MIDDLEWARE = [

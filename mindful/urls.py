@@ -10,14 +10,15 @@ urlpatterns = [
     path('forum/', include('forum.urls')),
     path('news/', include('news.urls')),
     path('doc/', include('docdash.urls')),
-    path('chat/', include('livechat.urls')),  
+    path('chat/', include('livechat.urls')),
     path('events/', include('events.urls')),
     path('contacts/', include('contact.urls')),
     path('location/', include('location.urls')),
+    path('analyse/', include('socialanalysis.urls')),
 ]
 
 if settings.DEBUG:
     import debug_toolbar
     urlpatterns = [
         path('__debug__/', include(debug_toolbar.urls)),
-] + urlpatterns
+    ] + urlpatterns
