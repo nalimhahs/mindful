@@ -12,7 +12,7 @@ def analyseSocialsView(request):
         if form.is_valid():
             username = form.cleaned_data['username']
             tweets = get_all_tweets(username)
-            print(tweets)
+            # print(tweets)
             analysis = datreeINPUT(tweets[0][2])
     else:
         form = UsernameForm()
