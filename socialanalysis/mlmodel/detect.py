@@ -8,6 +8,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn import metrics
 import os
 import pickle
+from sklearn import tree
 
 
 tweets_data = []
@@ -85,7 +86,6 @@ def runall():
 
 
 def datreeINPUT(inputtweet):
-    from sklearn import tree
     with open('x.data', 'rb') as xfilehandle:
         x = pickle.load(xfilehandle)
     with open('y.data', 'rb') as yfilehandle:
