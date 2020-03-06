@@ -7,6 +7,8 @@ from sklearn.metrics import confusion_matrix
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn import metrics
 import os
+import pickle
+from sklearn import tree
 
 
 tweets_data = []
@@ -51,13 +53,6 @@ def nbTrain():
     nbscore = format(metrics.auc(fpr, tpr))
     nbscore = float(nbscore)*100
 
-#    test_try= vectorizer.transform(["Lets help those in need, fight anxiety and bring happiness"])
-#    test_try2= vectorizer.transform(["Dont look down at people with anxiety rather give love and respect to all. shout! Equality."])
-#    predictr = nb.predict(test_try)
-#    predictt = nb.predict(test_try2)
-#    print(predictr)
-#    print(predictt)
-
     print("Naive Bayes  Accuracy : \n", nbscore, "%")
     print(" Completion Speed", round((time.time() - start_timenb), 5))
     print()
@@ -83,14 +78,18 @@ def datree():
 
 
 def runall():
-    retrieveTweet(os.getcwd() + '/socialanalysis/mlmodel/data/tweetdata.txt')
-    retrieveProcessedData(os.getcwd() + '/socialanalysis/mlmodel/processed_data/output.xlsx')
-    nbTrain()
-    datree()
+    # retrieveTweet(os.getcwd() + '/socialanalysis/mlmodel/data/tweetdata.txt')
+    # retrieveProcessedData(os.getcwd() + '/socialanalysis/mlmodel/processed_data/output.xlsx')
+    # nbTrain()
+    # datree()
+    pass
 
 
 def datreeINPUT(inputtweet):
-    from sklearn import tree
+    with open('x.data', 'rb') as xfilehandle:
+        x = pickle.load(xfilehandle)
+    with open('y.data', 'rb') as yfilehandle:
+        y = pickle.load(yfilehandle)
     train_featurestree = vectorizer.fit_transform(x)
     dtree = tree.DecisionTreeClassifier()
 
@@ -112,11 +111,5 @@ def datreeINPUT(inputtweet):
     print(predictt)
     print("*****************")
     return predictt
-
-
-runall()
-
-# print("Input your tweet : ")
-# inputtweet = input()
 
 # datreeINPUT(inputtweet)
