@@ -1,4 +1,5 @@
-﻿<!doctype html>
+﻿{% load static %}
+<!doctype html>
 <html class="no-js " lang="en">
 <head>
 <meta charset="utf-8">
@@ -9,17 +10,17 @@
 <title>:: Alpino Menu Rught ::</title>
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <!-- Favicon-->
-<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/css/main.css">
-<link rel="stylesheet" href="assets/css/inbox.css">
-<link rel="stylesheet" href="assets/plugins/light-gallery/css/lightgallery.css">
-<link rel="stylesheet" href="assets/css/color_skins.css">
+<link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/inbox.css' %}">
+<link rel="stylesheet" href="{% static 'assets/plugins/light-gallery/css/lightgallery.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/color_skins.css' %}">
 </head>
 <body class="theme-black menu_dark">
 <!-- Page Loader -->
 <div class="page-loader-wrapper">
     <div class="loader">
-        <div class="m-t-30"><img src="assets/images/logo.svg" width="48" height="48" alt="Alpino"></div>
+        <div class="m-t-30"><img src="{% static 'assets/images/logo.svg' %}" width="48" height="48" alt="Alpino"></div>
         <p>Please wait...</p>        
     </div>
 </div>
@@ -107,7 +108,7 @@
     <ul class="menu_list">
         <li>
             <a href="javascript:void(0);" class="bars"></a>
-            <a class="navbar-brand" href="index.html"><img src="assets/images/logo.svg" alt="Alpino"></a>
+            <a class="navbar-brand" href="index.html"><img src="{% static 'assets/images/logo.svg' %}" alt="Alpino"></a>
         </li>
         <li><a href="javascript:void(0);" class="btn_overlay hidden-sm-down"><i class="zmdi zmdi-search"></i></a></li>        
         <li><a href="javascript:void(0);" class="menu-sm"><i class="zmdi zmdi-swap"></i></a></li>        
@@ -172,7 +173,7 @@
                         <li>
                             <a href="javascript:void(0);">
                                 <div class="media">
-                                    <img class="media-object rounded-circle" src="assets/images/xs/avatar1.jpg" alt="">
+                                    <img class="media-object rounded-circle" src="{% static 'assets/images/xs/avatar1.jpg' %}" alt="">
                                     <div class="media-body">
                                         <span class="name">Alexander <small class="time">35min ago</small></span>
                                         <p class="message">New tasks needs to be done</p>                                        
@@ -182,8 +183,8 @@
                         </li>
                         <li>
                             <a href="javascript:void(0);">
-                                <div class="media">
-                                    <img class="media-object rounded-circle" src="assets/images/xs/avatar2.jpg" alt="">
+                                <div class="media">  
+                                    <img class="media-object rounded-circle" src="{% static 'assets/images/xs/avatar2.jpg' %}" alt="">
                                     <div class="media-body">
                                         <span class="name">Grayson <small class="time">1hr ago</small></span>
                                         <p class="message">New tasks needs to be done</p>                                        
@@ -194,7 +195,7 @@
                         <li>
                             <a href="javascript:void(0);">
                                 <div class="media">
-                                    <img class="media-object rounded-circle" src="assets/images/xs/avatar3.jpg" alt="">
+                                    <img class="media-object rounded-circle" src="{% static 'assets/images/xs/avatar3.jpg' %}" alt="">
                                     <div class="media-body">
                                         <span class="name">Sophia <small class="time">31min ago</small></span>
                                         <p class="message">New tasks needs to be done</p>                                        
@@ -260,9 +261,9 @@
                         </div>
                         <ul class="list-unstyled team-info">
                             <li class="m-r-15"><small class="text-muted">Team</small></li>
-                            <li><img src="assets/images/xs/avatar2.jpg" alt="Avatar"></li>
-                            <li><img src="assets/images/xs/avatar3.jpg" alt="Avatar"></li>
-                            <li><img src="assets/images/xs/avatar4.jpg" alt="Avatar"></li>
+                            <li><img src="{% static 'assets/images/xs/avatar2.jpg' %}" alt="Avatar"></li>
+                            <li><img src="{% static 'assets/images/xs/avatar3.jpg' %}" alt="Avatar"></li>
+                            <li><img src="{% static 'assets/images/xs/avatar4.jpg' %}" alt="Avatar"></li>
                         </ul>
                     </a>
                 </div>
@@ -274,8 +275,8 @@
                         </div>
                         <ul class="list-unstyled team-info">
                             <li class="m-r-15"><small class="text-muted">Team</small></li>
-                            <li><img src="assets/images/xs/avatar6.jpg" alt="Avatar"></li>
-                            <li><img src="assets/images/xs/avatar7.jpg" alt="Avatar"></li>
+                            <li><img src="{% static 'assets/images/xs/avatar6.jpg' %}" alt="Avatar"></li>
+                            <li><img src="{% static 'assets/images/xs/avatar7.jpg' %}" alt="Avatar"></li>
                         </ul>
                     </a>
                 </div>
@@ -287,8 +288,8 @@
                         </div>
                         <ul class="list-unstyled team-info">
                             <li class="m-r-15"><small class="text-muted">Team</small></li>
-                            <li><img src="assets/images/xs/avatar8.jpg" alt="Avatar"></li>
-                            <li><img src="assets/images/xs/avatar9.jpg" alt="Avatar"></li>
+                            <li><img src="{% static 'assets/images/xs/avatar8.jpg' %}" alt="Avatar"></li>
+                            <li><img src="{% static 'assets/images/xs/avatar9.jpg' %}" alt="Avatar"></li>
                         </ul>
                     </a>
                 </div>
@@ -471,7 +472,7 @@
                 <li>
                     <div class="user-info m-b-20">
                         <div class="image">
-                            <a href="profile.html"><img src="assets/images/profile_av.jpg" alt="User"></a>
+                            <a href="profile.html"><img src="{% static 'assets/images/profile_av.jpg' %}" alt="User"></a>
                         </div>
                         <div class="detail">
                             <h6>Michael</h6>
@@ -657,18 +658,18 @@
                         </div>
                         <div class="body">
                             <div id="aniimated-thumbnials" class="list-unstyled row clearfix">
-                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"> <a href="assets/images/image-gallery/1.jpg"> <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/1.jpg" alt=""> </a> </div>
-                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"> <a href="assets/images/image-gallery/2.jpg" > <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/2.jpg" alt=""> </a> </div>
-                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"> <a href="assets/images/image-gallery/3.jpg" > <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/3.jpg" alt=""> </a> </div>
-                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"> <a href="assets/images/image-gallery/4.jpg" > <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/4.jpg" alt=""> </a> </div>
-                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"> <a href="assets/images/image-gallery/5.jpg" > <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/5.jpg" alt=""> </a> </div>
-                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"> <a href="assets/images/image-gallery/6.jpg" > <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/6.jpg" alt=""> </a> </div>
-                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"> <a href="assets/images/image-gallery/7.jpg" > <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/7.jpg" alt=""> </a> </div>
-                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"> <a href="assets/images/image-gallery/8.jpg" > <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/8.jpg" alt=""> </a> </div>
-                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"> <a href="assets/images/image-gallery/9.jpg" > <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/9.jpg" alt=""> </a> </div>
-                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"> <a href="assets/images/image-gallery/10.jpg" > <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/10.jpg" alt=""> </a> </div>
-                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"> <a href="assets/images/image-gallery/11.jpg" > <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/11.jpg" alt=""> </a> </div>
-                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"> <a href="assets/images/image-gallery/12.jpg" > <img class="img-fluid img-thumbnail" src="assets/images/image-gallery/12.jpg" alt=""> </a> </div>                                
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"> <a href="{% static 'assets/images/image-gallery/1.jpg' %}"> <img class="img-fluid img-thumbnail" src="{% static 'assets/images/image-gallery/1.jpg' %}" alt=""> </a> </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"> <a href="{% static 'assets/images/image-gallery/2.jpg' %}" > <img class="img-fluid img-thumbnail" src="{% static 'assets/images/image-gallery/2.jpg' %}" alt=""> </a> </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"> <a href="{% static 'assets/images/image-gallery/3.jpg' %}" > <img class="img-fluid img-thumbnail" src="{% static 'assets/images/image-gallery/3.jpg' %}" alt=""> </a> </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"> <a href="{% static 'assets/images/image-gallery/4.jpg' %}" > <img class="img-fluid img-thumbnail" src="{% static 'assets/images/image-gallery/4.jpg' %}" alt=""> </a> </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"> <a href="{% static 'assets/images/image-gallery/5.jpg' %}" > <img class="img-fluid img-thumbnail" src="{% static 'assets/images/image-gallery/5.jpg' %}" alt=""> </a> </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"> <a href="{% static 'assets/images/image-gallery/6.jpg' %}" > <img class="img-fluid img-thumbnail" src="{% static 'assets/images/image-gallery/6.jpg' %}" alt=""> </a> </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"> <a href="{% static 'assets/images/image-gallery/7.jpg' %}" > <img class="img-fluid img-thumbnail" src="{% static 'assets/images/image-gallery/7.jpg' %}" alt=""> </a> </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"> <a href="{% static 'assets/images/image-gallery/8.jpg' %}" > <img class="img-fluid img-thumbnail" src="{% static 'assets/images/image-gallery/8.jpg' %}" alt=""> </a> </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"> <a href="{% static 'assets/images/image-gallery/9.jpg' %}" > <img class="img-fluid img-thumbnail" src="{% static 'assets/images/image-gallery/9.jpg' %}" alt=""> </a> </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"> <a href="{% static 'assets/images/image-gallery/10.jpg' %}" > <img class="img-fluid img-thumbnail" src="{% static 'assets/images/image-gallery/10.jpg' %}" alt=""> </a> </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"> <a href="{% static 'assets/images/image-gallery/11.jpg' %}" > <img class="img-fluid img-thumbnail" src="{% static 'assets/images/image-gallery/11.jpg' %}" alt=""> </a> </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 m-b-20"> <a href="{% static 'assets/images/image-gallery/12.jpg' %}" > <img class="img-fluid img-thumbnail" src="{% static 'assets/images/image-gallery/12.jpg' %}" alt=""> </a> </div>                                
                             </div>
                         </div>                        
                     </div>
@@ -687,9 +688,9 @@
                                 <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?</p>
                                 <a href="javascript:void(0);">http://compass.com/lorem/timeline.html</a>
                                 <div class="row">
-                                    <div class="col-sm-4 m-t-10"> <a href="javascript:void(0);"><img src="assets/images/image2.jpg" alt="" class="img-fluid img-thumbnail"></a> </div>
-                                    <div class="col-sm-4 m-t-10"> <a href="javascript:void(0);"> <img src="assets/images/image3.jpg" alt="" class="img-fluid img-thumbnail"></a> </div>
-                                    <div class="col-sm-4 m-t-10"> <a href="javascript:void(0);"> <img src="assets/images/image4.jpg" alt="" class="img-fluid img-thumbnail"> </a> </div>
+                                <div class="col-sm-4 m-t-10"> <a href="javascript:void(0);"><img src="{% static 'assets/images/image2.jpg' %}" alt="" class="img-fluid img-thumbnail"></a> </div>
+                                    <div class="col-sm-4 m-t-10"> <a href="javascript:void(0);"> <img src="{% static 'assets/images/image3.jpg' %}" alt="" class="img-fluid img-thumbnail"></a> </div>
+                                    <div class="col-sm-4 m-t-10"> <a href="javascript:void(0);"> <img src="{% static 'assets/images/image4.jpg' %}" alt="" class="img-fluid img-thumbnail"> </a> </div>
                                 </div>
                             </div>
                         </div>
@@ -705,7 +706,7 @@
                                             <a href="javascript:void(0);" class="favourite col-amber" data-toggle="active"><i class="zmdi zmdi-star"></i></a>
                                         </div>                                        
                                         <div class="media-body">
-                                            <div class="thumb"> <img src="assets/images/xs/avatar1.jpg" class="rounded-circle" alt=""> </div>
+                                            <div class="thumb"> <img src="{% static 'assets/images/xs/avatar1.jpg' %}" class="rounded-circle" alt=""> </div>
                                             <div class="media-heading">
                                                 <a href="mail-single.html">John Smith</a>
                                                 <span class="badge badge-warning">Shop</span>
@@ -723,7 +724,7 @@
                                             <a href="javascript:void(0);" class="favourite col-amber" data-toggle="active"><i class="zmdi zmdi-star"></i></a>
                                         </div>
                                         <div class="media-body">
-                                            <div class="thumb"> <img src="assets/images/xs/avatar2.jpg" class="rounded-circle" alt=""> </div>
+                                            <div class="thumb"> <img src="{% static 'assets/images/xs/avatar2.jpg' %}" class="rounded-circle" alt=""> </div>
                                             <div class="media-heading">
                                                 <a href="mail-single.html">Maryam Amiri</a>
                                                 <span class="badge badge-danger">Google</span>
@@ -741,7 +742,7 @@
                                             <a href="javascript:void(0);" class="favourite text-muted" data-toggle="active"><i class="zmdi zmdi-star-outline"></i></a>
                                         </div>
                                         <div class="media-body">
-                                            <div class="thumb"> <img src="assets/images/xs/avatar3.jpg" class="rounded-circle" alt=""> </div>
+                                            <div class="thumb"> <img src="{% static 'assets/images/xs/avatar3.jpg' %}" class="rounded-circle" alt=""> </div>
                                             <div class="media-heading">
                                                 <a href="mail-single.html">Fidel Tonn</a>
                                                 <span class="badge badge-success">Work</span>
@@ -759,7 +760,7 @@
                                             <a href="javascript:void(0);" class="favourite text-muted" data-toggle="active"><i class="zmdi zmdi-star-outline"></i></a>
                                         </div>
                                         <div class="media-body">
-                                            <div class="thumb"> <img src="assets/images/xs/avatar4.jpg" class="rounded-circle" alt=""> </div>
+                                            <div class="thumb"> <img src="{% static 'assets/images/xs/avatar4.jpg' %}" class="rounded-circle" alt=""> </div>
                                             <div class="media-heading">
                                                 <a href="mail-single.html" class="m-r-10">Gary Camara</a>
                                                 <small class="float-right text-muted">3 Mar</small>
@@ -777,19 +778,19 @@
                                 <ul class="list-unstyled team-info">
                                     <li class="m-r-15"><small>Design Team</small></li>
                                     <li>
-                                        <img src="assets/images/xs/avatar10.jpg" alt="Avatar">
+                                        <img src="{% static 'assets/images/xs/avatar10.jpg' %}" alt="Avatar">
                                     </li>
                                     <li>
-                                        <img src="assets/images/xs/avatar9.jpg" alt="Avatar">
+                                        <img src="{% static 'assets/images/xs/avatar9.jpg' %}" alt="Avatar">
                                     </li>
                                     <li>
-                                        <img src="assets/images/xs/avatar8.jpg" alt="Avatar">
+                                        <img src="{% static 'assets/images/xs/avatar8.jpg' %}" alt="Avatar">
                                     </li>
                                     <li>
-                                        <img src="assets/images/xs/avatar7.jpg" alt="Avatar">
+                                        <img src="{% static 'assets/images/xs/avatar7.jpg' %}" alt="Avatar">
                                     </li>
                                     <li>
-                                        <img src="assets/images/xs/avatar6.jpg" alt="Avatar">
+                                        <img src="{% static 'assets/images/xs/avatar6.jpg' %}" alt="Avatar">
                                     </li>
                                 </ul>
                             </div>
@@ -801,12 +802,12 @@
     </div>
 </section>
 <!-- Jquery Core Js --> 
-<script src="assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js --> 
-<script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js --> 
+<script src="{% static 'assets/bundles/libscripts.bundle.js' %}"></script> <!-- Lib Scripts Plugin Js --> 
+<script src="{% static 'assets/bundles/vendorscripts.bundle.js' %}"></script> <!-- Lib Scripts Plugin Js --> 
 
-<script src="assets/plugins/light-gallery/js/lightgallery-all.min.js"></script> <!-- Light Gallery Plugin Js --> 
+<script src="{% static 'assets/plugins/light-gallery/js/lightgallery-all.min.js' %}"></script> <!-- Light Gallery Plugin Js --> 
 
-<script src="assets/bundles/mainscripts.bundle.js"></script><!-- Custom Js -->
-<script src="assets/js/pages/medias/image-gallery.js"></script>
+<script src="{% static 'assets/bundles/mainscripts.bundle.js' %}"></script><!-- Custom Js -->
+<script src="{% static 'assets/js/pages/medias/image-gallery.js' %}"></script>
 </body>
 </html>
