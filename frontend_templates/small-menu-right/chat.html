@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html class="no-js " lang="en">
 <head>
@@ -9,18 +10,18 @@
 <title>:: Alpino Menu Rught ::</title>
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 <!-- Favicon-->
-<link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="{% static 'assets/plugins/bootstrap/css/bootstrap.min.css' %}">
 <!-- Custom Css -->
-<link rel="stylesheet" href="assets/css/main.css">
-<link rel="stylesheet" href="assets/css/chatapp.css">
-<link rel="stylesheet" href="assets/css/color_skins.css">
+<link rel="stylesheet" href="{% static 'assets/css/main.css'">
+<link rel="stylesheet" href="{% static 'assets/css/chatapp.css' %}">
+<link rel="stylesheet" href="{% static 'assets/css/color_skins.css' %}">
 </head>
 </head>
 <body class="theme-black menu_dark">
 <!-- Page Loader -->
 <div class="page-loader-wrapper">
     <div class="loader">
-        <div class="m-t-30"><img src="assets/images/logo.svg" width="48" height="48" alt="Alpino"></div>
+        <div class="m-t-30"><img src="{% static 'assets/images/logo.svg' %}" width="48" height="48" alt="Alpino"></div>
         <p>Please wait...</p>        
     </div>
 </div>
@@ -108,7 +109,7 @@
     <ul class="menu_list">
         <li>
             <a href="javascript:void(0);" class="bars"></a>
-            <a class="navbar-brand" href="index.html"><img src="assets/images/logo.svg" alt="Alpino"></a>
+            <a class="navbar-brand" href="index.html"><img src="{% static 'assets/images/logo.svg' %}" alt="Alpino"></a>
         </li>
         <li><a href="javascript:void(0);" class="btn_overlay hidden-sm-down"><i class="zmdi zmdi-search"></i></a></li>        
         <li><a href="javascript:void(0);" class="menu-sm"><i class="zmdi zmdi-swap"></i></a></li>        
@@ -173,7 +174,7 @@
                         <li>
                             <a href="javascript:void(0);">
                                 <div class="media">
-                                    <img class="media-object rounded-circle" src="assets/images/xs/avatar1.jpg" alt="">
+                                    <img class="media-object rounded-circle" src="{% static 'assets/images/xs/avatar1.jpg' %}" alt="">
                                     <div class="media-body">
                                         <span class="name">Alexander <small class="time">35min ago</small></span>
                                         <p class="message">New tasks needs to be done</p>                                        
@@ -184,7 +185,7 @@
                         <li>
                             <a href="javascript:void(0);">
                                 <div class="media">
-                                    <img class="media-object rounded-circle" src="assets/images/xs/avatar2.jpg" alt="">
+                                    <img class="media-object rounded-circle" src="{% static 'assets/images/xs/avatar2.jpg' %}" alt="">
                                     <div class="media-body">
                                         <span class="name">Grayson <small class="time">1hr ago</small></span>
                                         <p class="message">New tasks needs to be done</p>                                        
@@ -195,7 +196,7 @@
                         <li>
                             <a href="javascript:void(0);">
                                 <div class="media">
-                                    <img class="media-object rounded-circle" src="assets/images/xs/avatar3.jpg" alt="">
+                                    <img class="media-object rounded-circle" src="{% static 'assets/images/xs/avatar3.jpg' %}" alt="">
                                     <div class="media-body">
                                         <span class="name">Sophia <small class="time">31min ago</small></span>
                                         <p class="message">New tasks needs to be done</p>                                        
@@ -261,9 +262,9 @@
                         </div>
                         <ul class="list-unstyled team-info">
                             <li class="m-r-15"><small class="text-muted">Team</small></li>
-                            <li><img src="assets/images/xs/avatar2.jpg" alt="Avatar"></li>
-                            <li><img src="assets/images/xs/avatar3.jpg" alt="Avatar"></li>
-                            <li><img src="assets/images/xs/avatar4.jpg" alt="Avatar"></li>
+                            <li><img src="{% static 'assets/images/xs/avatar2.jpg' %}" alt="Avatar"></li>
+                            <li><img src="{% static 'assets/images/xs/avatar3.jpg' %}" alt="Avatar"></li>
+                            <li><img src="{% static 'assets/images/xs/avatar4.jpg' %}" alt="Avatar"></li>
                         </ul>
                     </a>
                 </div>
@@ -275,8 +276,8 @@
                         </div>
                         <ul class="list-unstyled team-info">
                             <li class="m-r-15"><small class="text-muted">Team</small></li>
-                            <li><img src="assets/images/xs/avatar6.jpg" alt="Avatar"></li>
-                            <li><img src="assets/images/xs/avatar7.jpg" alt="Avatar"></li>
+                            <li><img src="{% static 'assets/images/xs/avatar6.jpg' %}" alt="Avatar"></li>
+                            <li><img src="{% static 'assets/images/xs/avatar7.jpg' %}" alt="Avatar"></li>
                         </ul>
                     </a>
                 </div>
@@ -288,8 +289,8 @@
                         </div>
                         <ul class="list-unstyled team-info">
                             <li class="m-r-15"><small class="text-muted">Team</small></li>
-                            <li><img src="assets/images/xs/avatar8.jpg" alt="Avatar"></li>
-                            <li><img src="assets/images/xs/avatar9.jpg" alt="Avatar"></li>
+                            <li><img src="{% static 'assets/images/xs/avatar8.jpg' %}" alt="Avatar"></li>
+                            <li><img src="{% static 'assets/images/xs/avatar9.jpg' %}" alt="Avatar"></li>
                         </ul>
                     </a>
                 </div>
@@ -472,7 +473,7 @@
                 <li>
                     <div class="user-info m-b-20">
                         <div class="image">
-                            <a href="profile.html"><img src="assets/images/profile_av.jpg" alt="User"></a>
+                            <a href="profile.html"><img src="{% static 'assets/images/profile_av.jpg' %}" alt="User"></a>
                         </div>
                         <div class="detail">
                             <h6>Michael</h6>
@@ -665,7 +666,7 @@
                                 </div>
                             </div>
                             <div class="chat-header clearfix">
-                                <a href="javascript:void(0);" class="btn-detail"><img src="assets/images/xs/avatar2.jpg" alt="avatar" />
+                                <a href="javascript:void(0);" class="btn-detail"><img src="{% static 'assets/images/xs/avatar2.jpg' %}" alt="avatar" />
                                     <div class="chat-about">
                                         <div class="chat-with">Aiden Chavez</div>
                                         <div class="chat-num-messages">already 8 messages</div>
@@ -722,63 +723,63 @@
                                 <div role="tabpanel" class="tab-pane stretchRight active" id="people">
                                     <ul class="chat-list list-unstyled m-b-0">
                                         <li class="clearfix">
-                                            <img src="assets/images/xs/avatar1.jpg" alt="avatar" />
+                                            <img src="{% static 'assets/images/xs/avatar1.jpg' %}" alt="avatar" />
                                             <div class="about">
                                                 <div class="name">Vincent Porter</div>
                                                 <div class="status"> <i class="zmdi zmdi-circle offline"></i> left 7 mins ago </div>                                            
                                             </div>
                                         </li>
                                         <li class="clearfix active">
-                                            <img src="assets/images/xs/avatar2.jpg" alt="avatar" />
+                                            <img src="{% static 'assets/images/xs/avatar2.jpg' %}" alt="avatar" />
                                             <div class="about">
                                                 <div class="name">Aiden Chavez</div>
                                                 <div class="status"> <i class="zmdi zmdi-circle online"></i> online </div>
                                             </div>
                                         </li>
                                         <li class="clearfix">
-                                            <img src="assets/images/xs/avatar3.jpg" alt="avatar" />
+                                            <img src="{% static 'assets/images/xs/avatar3.jpg' %}" alt="avatar" />
                                             <div class="about">
                                                 <div class="name">Mike Thomas</div>
                                                 <div class="status"> <i class="zmdi zmdi-circle online"></i> online </div>
                                             </div>
                                         </li>
                                         <li class="clearfix">
-                                            <img src="assets/images/xs/avatar4.jpg" alt="avatar" />
+                                            <img src="{% static 'assets/images/xs/avatar4.jpg' %}" alt="avatar" />
                                             <div class="about">
                                                 <div class="name">Erica Hughes</div>
                                                 <div class="status"> <i class="zmdi zmdi-circle online"></i> online </div>
                                             </div>
                                         </li>
                                         <li class="clearfix">
-                                            <img src="assets/images/xs/avatar5.jpg" alt="avatar" />
+                                            <img src="{% static 'assets/images/xs/avatar5.jpg' %}" alt="avatar" />
                                             <div class="about">
                                                 <div class="name">Ginger Johnston</div>
                                                 <div class="status"> <i class="zmdi zmdi-circle online"></i> online </div>
                                             </div>
                                         </li>
                                         <li class="clearfix">
-                                            <img src="assets/images/xs/avatar6.jpg" alt="avatar" />
+                                            <img src="{% static 'assets/images/xs/avatar6.jpg' %}" alt="avatar" />
                                             <div class="about">
                                                 <div class="name">Tracy Carpenter</div>
                                                 <div class="status"> <i class="zmdi zmdi-circle offline"></i> left 30 mins ago </div>
                                             </div>
                                         </li>
                                         <li class="clearfix">
-                                            <img src="assets/images/xs/avatar7.jpg" alt="avatar" />
+                                            <img src="{% static 'assets/images/xs/avatar7.jpg' %}" alt="avatar" />
                                             <div class="about">
                                                 <div class="name">Christian Kelly</div>
                                                 <div class="status"> <i class="zmdi zmdi-circle offline"></i> left 10 hours ago </div>
                                             </div>
                                         </li>
                                         <li class="clearfix">
-                                            <img src="assets/images/xs/avatar8.jpg" alt="avatar" />
+                                            <img src="{% static 'assets/images/xs/avatar8.jpg' %}" alt="avatar" />
                                             <div class="about">
                                                 <div class="name">Monica Ward</div>
                                                 <div class="status"> <i class="zmdi zmdi-circle online"></i> online </div>
                                             </div>
                                         </li>
                                         <li class="clearfix">
-                                            <img src="assets/images/xs/avatar9.jpg" alt="avatar" />
+                                            <img src="{% static 'assets/images/xs/avatar9.jpg' %}" alt="avatar" />
                                             <div class="about">
                                                 <div class="name">Dean Henry</div>
                                                 <div class="status"> <i class="zmdi zmdi-circle offline"></i> offline since Oct 28 </div>
@@ -789,21 +790,21 @@
                                 <div role="tabpanel" class="tab-pane stretchRight" id="groups">
                                     <ul class="chat-list list-unstyled m-b-0">
                                         <li class="clearfix">
-                                            <img src="assets/images/xs/avatar6.jpg" alt="avatar"/>
+                                            <img src="{% static 'assets/images/xs/avatar6.jpg' %}" alt="avatar"/>
                                             <div class="about">
                                                 <div class="name">PHP Lead</div>
                                                 <div class="status">6 People </div>
                                             </div>
                                         </li>
                                         <li class="clearfix">
-                                            <img src="assets/images/xs/avatar7.jpg" alt="avatar"/>
+                                            <img src="{% static 'assets/images/xs/avatar7.jpg' %}" alt="avatar"/>
                                             <div class="about">
                                                 <div class="name">UI UX Designer</div>
                                                 <div class="status">10 People </div>
                                             </div>
                                         </li>
                                         <li class="clearfix">
-                                            <img src="assets/images/xs/avatar8.jpg" alt="avatar"/>
+                                            <img src="{% static 'assets/images/xs/avatar8.jpg' %}" alt="avatar"/>
                                             <div class="about">
                                                 <div class="name">TL Groups</div>
                                                 <div class="status">2 People </div>
@@ -820,10 +821,10 @@
     </div>
 </section>
 
-<script src="assets/bundles/libscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js --> 
-<script src="assets/bundles/vendorscripts.bundle.js"></script> <!-- Lib Scripts Plugin Js --> 
+<script src="{% static 'assets/bundles/libscripts.bundle.js' %}"></script> <!-- Lib Scripts Plugin Js --> 
+<script src="{% static 'assets/bundles/vendorscripts.bundle.js' %}"></script> <!-- Lib Scripts Plugin Js --> 
 
-<script src="assets/bundles/mainscripts.bundle.js"></script><!-- Custom Js -->
+<script src="{% static 'assets/bundles/mainscripts.bundle.js' %}"></script><!-- Custom Js -->
 
 <script>
     $(".list_btn").on('click',function(){
