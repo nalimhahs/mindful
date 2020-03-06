@@ -8,9 +8,9 @@
             <div class="row clearfix">
                 <div class="col-lg-5 col-md-5 col-sm-12">
                     <h2>Profile</h2>
-                </div>            
+                </div>
                 <div class="col-lg-7 col-md-7 col-sm-12">
-                    <div class="input-group m-b-0">                
+                    <div class="input-group m-b-0">
                         <input type="text" class="form-control" placeholder="Search...">
                         <span class="input-group-addon">
                             <i class="zmdi zmdi-search"></i>
@@ -28,7 +28,9 @@
                                 <div class="card text-center">
                                     <div class="body">
                                         <i class="zmdi zmdi-thumb-up zmdi-hc-2x"></i>
-                                        <h5 class="m-b-0 number count-to" data-from="0" data-to="{{patientData.anxiety_quiz_score}}" data-speed="1000" data-fresh-interval="700">{{patientData.anxiety_quiz_score}}</h5>
+                                        <h5 class="m-b-0 number count-to" data-from="0"
+                                            data-to="{{patientData.anxiety_quiz_score}}" data-speed="1000"
+                                            data-fresh-interval="700">{{patientData.anxiety_quiz_score}}</h5>
                                         <small>Anxiety Score</small>
                                         <br>
                                         <small>You're doing great!</small>
@@ -37,9 +39,11 @@
                             </div>
                             <div class="col-lg-3 col-md-6 col-6">
                                 <div class="card text-center">
-                                    <div class="body">                            
+                                    <div class="body">
                                         <i class="zmdi zmdi-comment-text zmdi-hc-2x"></i>
-                                        <h5 class="m-b-0 number count-to" data-from="0" data-to="{{patientData.depression_quiz_score}}" data-speed="1000" data-fresh-interval="700">{{patientData.depression_quiz_score}}</h5>
+                                        <h5 class="m-b-0 number count-to" data-from="0"
+                                            data-to="{{patientData.depression_quiz_score}}" data-speed="1000"
+                                            data-fresh-interval="700">{{patientData.depression_quiz_score}}</h5>
                                         <small>Depression Score</small>
                                         <br>
                                         <small>You're doing great!</small>
@@ -50,7 +54,9 @@
                                 <div class="card text-center">
                                     <div class="body">
                                         <i class="zmdi zmdi-eye zmdi-hc-2x"></i>
-                                        <h5 class="m-b-0 number count-to" data-from="0" data-to="{{patientData.lifestyle_quiz_score}}" data-speed="1000" data-fresh-interval="700">{{patientData.lifestyle_quiz_score}}</h5>
+                                        <h5 class="m-b-0 number count-to" data-from="0"
+                                            data-to="{{patientData.lifestyle_quiz_score}}" data-speed="1000"
+                                            data-fresh-interval="700">{{patientData.lifestyle_quiz_score}}</h5>
                                         <small>Lifestyle Score</small>
                                         <br>
                                         <small>You're doing great!</small>
@@ -61,7 +67,8 @@
                                 <div class="card text-center">
                                     <div class="body">
                                         <i class="zmdi zmdi-attachment zmdi-hc-2x"></i>
-                                        <h5 class="m-b-0 number count-to" data-from="0" data-to="0" data-speed="1000" data-fresh-interval="700">0</h5>
+                                        <h5 class="m-b-0 number count-to" data-from="0" data-to="0" data-speed="1000"
+                                            data-fresh-interval="700">0</h5>
                                         <small>Medicines with side-effects</small>
                                         <br>
                                         <small>Whooo!</small>
@@ -74,22 +81,25 @@
                                 <div class="card">
                                     <div class="body">
                                         <h5>Blood Pressure</h5>
-                                        <div class="row">                            
+                                        <div class="row">
                                             <div class="col-md-5 col-5">
                                                 <span>Weekly avg Sys<span>
-                                                <h6 class="col-indigo">{{ pressureData.2.sys }}</h6>
+                                                        <h6 class="col-indigo">{{ pressureData.2.sys }}</h6>
                                             </div>
                                             <div class="col-md-5 col-5">
                                                 <span>Weekly avg Dia</span>
                                                 <h6 class="col-indigo">{{ pressureData.2.dia }}</h6>
                                             </div>
                                         </div>
-                                        <div class="sparkline" data-type="line" data-spot-Radius="3" data-highlight-Spot-Color="rgb(63, 81, 181)" data-highlight-Line-Color="#222"
-                                            data-min-Spot-Color="rgb(233, 30, 99)" data-max-Spot-Color="rgb(63, 81, 181)" data-spot-Color="rgb(63, 81, 181, 0.7)"
-                                            data-offset="90" data-width="100%" data-height="50px" data-line-Width="1" data-line-Color="#3F51B5"
-                                            data-fill-Color="#7b84b8"> 
+                                        <div class="sparkline" data-type="line" data-spot-Radius="3"
+                                            data-highlight-Spot-Color="rgb(63, 81, 181)"
+                                            data-highlight-Line-Color="#222" data-min-Spot-Color="rgb(233, 30, 99)"
+                                            data-max-Spot-Color="rgb(63, 81, 181)"
+                                            data-spot-Color="rgb(63, 81, 181, 0.7)" data-offset="90" data-width="100%"
+                                            data-height="50px" data-line-Width="1" data-line-Color="#3F51B5"
+                                            data-fill-Color="#7b84b8">
                                             {% for data in pressureData %}
-                                                {{data.sys}},
+                                            {{data.sys}},
                                             {% endfor %}
                                             110
                                         </div>
@@ -100,19 +110,22 @@
                                 <div class="card">
                                     <div class="body">
                                         <h5>Sleep</h5>
-                                        <div class="row">                            
+                                        <div class="row">
                                             <div class="col-md-5 col-5">
                                                 <span>Average deep sleep<span>
-                                                <h6 class="col-red">70.40%</h6>
+                                                        <h6 class="col-red">70.40%</h6>
                                             </div>
                                             <div class="col-md-5 col-5">
                                                 <span>Average duration</span>
                                                 <h6 class="col-red">6:59 hrs</h6>
                                             </div>
                                         </div>
-                                        <div class="sparkline" data-type="line" data-spot-Radius="2" data-highlight-Spot-Color="rgb(233, 30, 99)" data-highlight-Line-Color="#222"
-                                            data-min-Spot-Color="rgb(233, 30, 99)" data-max-Spot-Color="rgb(96, 125, 139)" data-spot-Color="rgb(96, 125, 139, 0.7)"
-                                            data-offset="90" data-width="100%" data-height="50px" data-line-Width="1" data-line-Color="#ec3b57"
+                                        <div class="sparkline" data-type="line" data-spot-Radius="2"
+                                            data-highlight-Spot-Color="rgb(233, 30, 99)"
+                                            data-highlight-Line-Color="#222" data-min-Spot-Color="rgb(233, 30, 99)"
+                                            data-max-Spot-Color="rgb(96, 125, 139)"
+                                            data-spot-Color="rgb(96, 125, 139, 0.7)" data-offset="90" data-width="100%"
+                                            data-height="50px" data-line-Width="1" data-line-Color="#ec3b57"
                                             data-fill-Color="#eb94a2"> 6,4,7,8,4,3,2,2,5,6,7,4,1,5,7,9,9,8,7,6 </div>
                                     </div>
                                 </div>
@@ -120,21 +133,24 @@
                             <div class="col-lg-4 col-md-12">
                                 <div class="card">
                                     <div class="body">
-                                       <h5>Appetite</h5>
-                                        <div class="row">                            
+                                        <h5>Appetite</h5>
+                                        <div class="row">
                                             <div class="col-md-5 col-5">
                                                 <span>Overall Appetite<span>
-                                                <h6 class="col-green">Good</h6>
+                                                        <h6 class="col-green">Good</h6>
                                             </div>
                                         </div>
-                                        <div class="sparkline" data-type="line" data-spot-Radius="3" data-highlight-Spot-Color="rgb(233, 30, 99)" data-highlight-Line-Color="#222"
-                                            data-min-Spot-Color="rgb(233, 30, 99)" data-max-Spot-Color="rgb(120, 184, 62)" data-spot-Color="rgb(120, 184, 62, 0.7)"
-                                            data-offset="90" data-width="100%" data-height="50px" data-line-Width="1" data-line-Color="#50d38a)"
-                                            data-fill-Color="#94d3b0"> 
+                                        <div class="sparkline" data-type="line" data-spot-Radius="3"
+                                            data-highlight-Spot-Color="rgb(233, 30, 99)"
+                                            data-highlight-Line-Color="#222" data-min-Spot-Color="rgb(233, 30, 99)"
+                                            data-max-Spot-Color="rgb(120, 184, 62)"
+                                            data-spot-Color="rgb(120, 184, 62, 0.7)" data-offset="90" data-width="100%"
+                                            data-height="50px" data-line-Width="1" data-line-Color="#50d38a)"
+                                            data-fill-Color="#94d3b0">
                                             {% for data in foodData %}
-                                                {{data.appetite}},
+                                            {{data.appetite}},
                                             {% endfor %}
-                                            4 
+                                            4
                                         </div>
                                     </div>
                                 </div>
@@ -146,7 +162,9 @@
                                     <div class="header">
                                         <h2><strong>Upcoming Appointments</strong></h2>
                                         <ul class="header-dropdown">
-                                            <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
+                                            <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle"
+                                                    data-toggle="dropdown" role="button" aria-haspopup="true"
+                                                    aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
                                                 <ul class="dropdown-menu dropdown-menu-right">
                                                     <li><a href="javascript:void(0);">Update</a></li>
                                                     <li><a href="javascript:void(0);" class="boxs-close">Delete</a></li>
@@ -162,7 +180,8 @@
                                             <div class="col-9">
                                                 <h6>Meet with Dr. Blah Blah</h6>
                                                 <p>Discuss stuff about something</p>
-                                                <address><i class="zmdi zmdi-pin"></i> 123 6th St. Melbourne, FL 32904</address>
+                                                <address><i class="zmdi zmdi-pin"></i> 123 6th St. Melbourne, FL 32904
+                                                </address>
                                             </div>
                                         </div>
                                         <hr>
@@ -173,7 +192,8 @@
                                             <div class="col-9">
                                                 <h6>Meet with Dr. Blah Blah</h6>
                                                 <p>Discuss stuff about something</p>
-                                                <address><i class="zmdi zmdi-pin"></i> 123 6th St. Melbourne, FL 32904</address>
+                                                <address><i class="zmdi zmdi-pin"></i> 123 6th St. Melbourne, FL 32904
+                                                </address>
                                             </div>
                                         </div>
                                     </div>
@@ -182,7 +202,9 @@
                                     <div class="header">
                                         <h2><strong>Profile</strong></h2>
                                         <ul class="header-dropdown">
-                                            <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
+                                            <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle"
+                                                    data-toggle="dropdown" role="button" aria-haspopup="true"
+                                                    aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
                                                 <ul class="dropdown-menu dropdown-menu-right">
                                                     <li><a href="javascript:void(0);">Update</a></li>
                                                     <li><a href="javascript:void(0);" class="boxs-close">Delete</a></li>
@@ -194,7 +216,10 @@
                                         <small class="text-muted">Address: </small>
                                         <p>6C, BCG Golden Orchids, Ruby Lane, Thammanam, Kochi</p>
                                         <div>
-                                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.3527874479983!2d76.30573181450332!3d9.987689192859579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d251ab43fcf%3A0xfee7af2bf87c9bbb!2sBCG%20Golden%20orchid!5e0!3m2!1sen!2sin!4v1583507923683!5m2!1sen!2sin" width="100%" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                            <iframe
+                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.3527874479983!2d76.30573181450332!3d9.987689192859579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d251ab43fcf%3A0xfee7af2bf87c9bbb!2sBCG%20Golden%20orchid!5e0!3m2!1sen!2sin!4v1583507923683!5m2!1sen!2sin"
+                                                width="100%" height="150" frameborder="0" style="border:0"
+                                                allowfullscreen></iframe>
                                         </div>
                                         <hr>
                                         <small class="text-muted">Email address: </small>
@@ -216,7 +241,9 @@
                                     <div class="header">
                                         <h2>Info</h2>
                                         <ul class="header-dropdown">
-                                            <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
+                                            <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle"
+                                                    data-toggle="dropdown" role="button" aria-haspopup="true"
+                                                    aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
                                                 <ul class="dropdown-menu dropdown-menu-right">
                                                     <li><a href="blog-post.html">New Post</a></li>
                                                     <li><a href="blog-details.html">Post Detail</a></li>
@@ -226,34 +253,37 @@
                                             </li>
                                         </ul>
                                     </div>
-                                    
-                                    <div class="body">                               
-                                        <h5 class="m-t-20 m-b-0 post_title">Update Anxiety test scores</h5>                                
-                                        <p>It looks like you haven't taken the anxiety test in a while!</p>                                
+
+                                    <div class="body">
+                                        <h5 class="m-t-20 m-b-0 post_title">Update Anxiety test scores</h5>
+                                        <p>It looks like you haven't taken the anxiety test in a while!</p>
                                         <div class="form-group m-b-0">
                                             <button class="btn btn-info btn-round">Take the test now!</button>
                                             <button class="btn btn-primary btn-simple btn-round">Reach Out!</button>
-                                        </div>                                
+                                        </div>
                                     </div>
-                                    <div class="body mt-2">                               
-                                        <h5 class="m-t-20 m-b-0 post_title">Update Lifestyle test scores</h5>                                
-                                        <p>It looks like you haven't taken the lifestyle test in a while!</p>                                
+                                    <div class="body mt-2">
+                                        <h5 class="m-t-20 m-b-0 post_title">Update Lifestyle test scores</h5>
+                                        <p>It looks like you haven't taken the lifestyle test in a while!</p>
                                         <div class="form-group m-b-0">
                                             <button class="btn btn-info btn-round">Take the test now!</button>
                                             <button class="btn btn-primary btn-simple btn-round">Reach Out!</button>
-                                        </div>                                
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="card">
                                     <div class="header">
                                         <h2><strong>Recent</strong> Forums</h2>
                                         <ul class="header-dropdown">
-                                            <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
+                                            <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle"
+                                                    data-toggle="dropdown" role="button" aria-haspopup="true"
+                                                    aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
                                                 <ul class="dropdown-menu slideUp">
                                                     <li><a href="javascript:void(0);">Action</a></li>
                                                     <li><a href="javascript:void(0);">Another action</a></li>
                                                     <li><a href="javascript:void(0);">Something else</a></li>
-                                                    <li><a href="javascript:void(0);" class="boxs-close">Deletee</a></li>
+                                                    <li><a href="javascript:void(0);" class="boxs-close">Deletee</a>
+                                                    </li>
                                                 </ul>
                                             </li>
                                         </ul>
@@ -262,21 +292,22 @@
                                         <ul class="inbox-widget list-unstyled clearfix">
                                             {% for thread in threads %}
                                             <li class="inbox-inner"><a href="javascript:void(0)">
-                                                <div class="inbox-item">
-                                                    <div class="inbox-item-info">
-                                                        <p class="author">{{thread.title}}</p>
-                                                        <p class="inbox-message">{{thread.desc}}</p>
-                                                        <p class="inbox-date">{{thread.date}}</p>
-                                                        <div class="hover_action">
-                                                            <a href="{% url 'show-thread' thread.id %}">
-                                                                <button class="btn btn-primary btn-sm"><i class="zmdi zmdi-eye"></i></button>
-                                                            </a>
+                                                    <div class="inbox-item">
+                                                        <div class="inbox-item-info">
+                                                            <p class="author">{{thread.title}}</p>
+                                                            <p class="inbox-message">{{thread.desc}}</p>
+                                                            <p class="inbox-date">{{thread.date}}</p>
+                                                            <div class="hover_action">
+                                                                <a href="{% url 'show-thread' thread.id %}">
+                                                                    <button class="btn btn-primary btn-sm"><i
+                                                                            class="zmdi zmdi-eye"></i></button>
+                                                                </a>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
                                                 </a>
-                                            </li>     
-                                            {% endfor %}                       
+                                            </li>
+                                            {% endfor %}
                                         </ul>
                                     </div>
                                 </div>
@@ -292,15 +323,16 @@
 
 {% block scripts %}
 <script src={% static "assets/bundles/knob.bundle.js" %}></script> <!-- Jquery Knob Plugin Js -->
-<script src={% static "assets/bundles/morrisscripts.bundle.js" %}></script> <!-- Morris Plugin Js --> 
-<script src={% static "assets/bundles/fullcalendarscripts.bundle.js" %}></script><!--/ calender javascripts --> 
+<script src={% static "assets/bundles/morrisscripts.bundle.js" %}></script> <!-- Morris Plugin Js -->
+<script src={% static "assets/bundles/fullcalendarscripts.bundle.js" %}></script>
+<!--/ calender javascripts -->
 
 <!-- <script src={% static "assets/bundles/mainscripts.bundle.js" %}></script> -->
 <script src={% static "assets/js/pages/calendar/calendar.js" %}></script>
 <script src={% static "assets/js/pages/profile.js" %}></script>
-<script src={% static "assets/bundles/vendorscripts.bundle.js"%}></script> <!-- Lib Scripts Plugin Js --> 
+<script src={% static "assets/bundles/vendorscripts.bundle.js"%}></script> <!-- Lib Scripts Plugin Js -->
 
-<script src={% static "assets/bundles/sparkline.bundle.js" %}></script> <!-- sparkline Plugin Js --> 
+<script src={% static "assets/bundles/sparkline.bundle.js" %}></script> <!-- sparkline Plugin Js -->
 <script src={% static "assets/bundles/jvectormap.bundle.js" %}></script> <!-- JVectorMap Plugin Js -->
 
 {% endblock %}

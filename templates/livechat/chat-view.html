@@ -14,9 +14,9 @@
             <div class="row">
                 <div class="col-lg-5 col-md-5 col-sm-12">
                     <h2>Chat - {{ room }}</h2>
-                </div>            
+                </div>
                 <div class="col-lg-7 col-md-7 col-sm-12">
-                    <div class="input-group m-b-0">                
+                    <div class="input-group m-b-0">
                         <input type="text" class="form-control" placeholder="Search...">
                         <span class="input-group-addon">
                             <i class="zmdi zmdi-search"></i>
@@ -24,15 +24,15 @@
                     </div>
                 </div>
             </div>
-        </div>        
+        </div>
         <div class="row clearfix">
             <div class="col-lg-7 col-md-7">
                 <div class="card">
                     <div class="body overflowhidden">
                         <div class="chat">
-                            <div class="user_detail">                                
+                            <div class="user_detail">
                                 <div class="row profile_state">
-                                    <div class="col-12">                                            
+                                    <div class="col-12">
                                         <small class="text-muted">Email address: </small>
                                         <p>michael@gmail.com</p>
                                         <hr>
@@ -49,28 +49,32 @@
                                     <div class="col-lg-4 col-md-12 col-6">
                                         <div class="body">
                                             <i class="zmdi zmdi-thumb-up col-blue"></i>
-                                            <h5 class="m-b-0 number count-to" data-from="0" data-to="1203" data-speed="1000" data-fresh-interval="700">1203</h5>
+                                            <h5 class="m-b-0 number count-to" data-from="0" data-to="1203"
+                                                data-speed="1000" data-fresh-interval="700">1203</h5>
                                             <small>Likes</small>
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-12 col-6">
                                         <div class="body">
                                             <i class="zmdi zmdi-account text-success"></i>
-                                            <h5 class="m-b-0 number count-to" data-from="0" data-to="1980" data-speed="1000" data-fresh-interval="700">1980</h5>
+                                            <h5 class="m-b-0 number count-to" data-from="0" data-to="1980"
+                                                data-speed="1000" data-fresh-interval="700">1980</h5>
                                             <small>Profile Views</small>
                                         </div>
                                     </div>
                                     <div class="col-lg-4 col-md-12 col-6">
                                         <div class="body">
                                             <i class="zmdi zmdi-attachment text-warning"></i>
-                                            <h5 class="m-b-0 number count-to" data-from="0" data-to="52" data-speed="1000" data-fresh-interval="700">52</h5>
+                                            <h5 class="m-b-0 number count-to" data-from="0" data-to="52"
+                                                data-speed="1000" data-fresh-interval="700">52</h5>
                                             <small>Attachment</small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="chat-header clearfix">
-                                <a href="javascript:void(0);" class="btn-detail"><img src="{% static 'assets/images/xs/avatar2.jpg' %}" alt="avatar" />
+                                <a href="javascript:void(0);" class="btn-detail"><img
+                                        src="{% static 'assets/images/xs/avatar2.jpg' %}" alt="avatar" />
                                     <div class="chat-about">
                                         <div class="chat-with">Aiden Chavez</div>
                                         <div class="chat-num-messages">already 8 messages</div>
@@ -81,21 +85,26 @@
                             <div class="chat-history clearfix">
                                 <ul class="">
                                     {% for chat in chats %}
-                                        {% if user == chat.user %}
-                                            <li class="clearfix">
-                                                <div class="message-data text-right"> <span class="message-data-time" >{{chat.created}}</span> &nbsp; &nbsp; <span class="message-data-name" >Me</span> <i class="zmdi zmdi-circle me"></i> </div>
-                                                <div class="message text-right other-message float-right">{{chat.message}}</div>
-                                            </li>
-                                        {% else %}
-                                            <li>
-                                                <div class="message-data">
-                                                    <span class="message-data-name"><i class="zmdi zmdi-circle online"></i> {{user.first_name}}</span> <span class="message-data-time">{{chat.created}}</span>
-                                                </div>
-                                                <div class="message my-message">
-                                                    <span>{{chat.message}}</span>                                            
-                                                </div>
-                                            </li>
-                                        {% endif %}
+                                    {% if user == chat.user %}
+                                    <li class="clearfix">
+                                        <div class="message-data text-right"> <span
+                                                class="message-data-time">{{chat.created}}</span> &nbsp; &nbsp; <span
+                                                class="message-data-name">Me</span> <i class="zmdi zmdi-circle me"></i>
+                                        </div>
+                                        <div class="message text-right other-message float-right">{{chat.message}}</div>
+                                    </li>
+                                    {% else %}
+                                    <li>
+                                        <div class="message-data">
+                                            <span class="message-data-name"><i class="zmdi zmdi-circle online"></i>
+                                                {{user.first_name}}</span> <span
+                                                class="message-data-time">{{chat.created}}</span>
+                                        </div>
+                                        <div class="message my-message">
+                                            <span>{{chat.message}}</span>
+                                        </div>
+                                    </li>
+                                    {% endif %}
                                     {% endfor %}
                                 </ul>
                             </div>
@@ -105,8 +114,10 @@
                                     <input type="text" class="form-control" placeholder="Enter text here...">
                                     <span class="input-group-addon"><i class="zmdi zmdi-mail-send"></i></span>
                                 </div>
-                                <a href="javascript:void(0);" class="btn btn-raised btn-warning btn-round"><i class="zmdi zmdi-camera"></i></a>
-                                <a href="javascript:void(0);" class="btn btn-raised btn-info btn-round"><i class="zmdi zmdi-file-text"></i></a>                            
+                                <a href="javascript:void(0);" class="btn btn-raised btn-warning btn-round"><i
+                                        class="zmdi zmdi-camera"></i></a>
+                                <a href="javascript:void(0);" class="btn btn-raised btn-info btn-round"><i
+                                        class="zmdi zmdi-file-text"></i></a>
                             </div>
                         </div>
                     </div>
@@ -115,126 +126,106 @@
             <div class="col-lg-5 col-md-5">
                 <div class="card">
                     <div class="body">
-                        <div id="plist" class="people-list">                            
-                            <ul class="nav nav-tabs padding-0" role="tablist">
-                                <li class="nav-item inlineblock"><a class="nav-link active" data-toggle="tab" href="#people">People</a></li>
-                                <li class="nav-item inlineblock"><a class="nav-link" data-toggle="tab" href="#groups">Groups</a></li>
-                            </ul>
-                            <div class="tab-content m-t-20">
-                                <div role="tabpanel" class="tab-pane stretchRight active" id="people">
-                                    <ul class="chat-list list-unstyled m-b-0">
-                                        <li class="clearfix">
-                                            <img src="{% static 'assets/images/xs/avatar1.jpg' %}" alt="avatar" />
-                                            <div class="about">
-                                                <div class="name">Vincent Porter</div>
-                                                <div class="status"> <i class="zmdi zmdi-circle offline"></i> left 7 mins ago </div>                                            
-                                            </div>
-                                        </li>
-                                        <li class="clearfix active">
-                                            <img src="{% static 'assets/images/xs/avatar2.jpg' %}" alt="avatar" />
-                                            <div class="about">
-                                                <div class="name">Aiden Chavez</div>
-                                                <div class="status"> <i class="zmdi zmdi-circle online"></i> online </div>
-                                            </div>
-                                        </li>
-                                        <li class="clearfix">
-                                            <img src="{% static 'assets/images/xs/avatar3.jpg' %}" alt="avatar" />
-                                            <div class="about">
-                                                <div class="name">Mike Thomas</div>
-                                                <div class="status"> <i class="zmdi zmdi-circle online"></i> online </div>
-                                            </div>
-                                        </li>
-                                        <li class="clearfix">
-                                            <img src="{% static 'assets/images/xs/avatar4.jpg' %}" alt="avatar" />
-                                            <div class="about">
-                                                <div class="name">Erica Hughes</div>
-                                                <div class="status"> <i class="zmdi zmdi-circle online"></i> online </div>
-                                            </div>
-                                        </li>
-                                        <li class="clearfix">
-                                            <img src="{% static 'assets/images/xs/avatar5.jpg' %}" alt="avatar" />
-                                            <div class="about">
-                                                <div class="name">Ginger Johnston</div>
-                                                <div class="status"> <i class="zmdi zmdi-circle online"></i> online </div>
-                                            </div>
-                                        </li>
-                                        <li class="clearfix">
-                                            <img src="{% static 'assets/images/xs/avatar6.jpg' %}" alt="avatar" />
-                                            <div class="about">
-                                                <div class="name">Tracy Carpenter</div>
-                                                <div class="status"> <i class="zmdi zmdi-circle offline"></i> left 30 mins ago </div>
-                                            </div>
-                                        </li>
-                                        <li class="clearfix">
-                                            <img src="{% static 'assets/images/xs/avatar7.jpg' %}" alt="avatar" />
-                                            <div class="about">
-                                                <div class="name">Christian Kelly</div>
-                                                <div class="status"> <i class="zmdi zmdi-circle offline"></i> left 10 hours ago </div>
-                                            </div>
-                                        </li>
-                                        <li class="clearfix">
-                                            <img src="{% static 'assets/images/xs/avatar8.jpg' %}" alt="avatar" />
-                                            <div class="about">
-                                                <div class="name">Monica Ward</div>
-                                                <div class="status"> <i class="zmdi zmdi-circle online"></i> online </div>
-                                            </div>
-                                        </li>
-                                        <li class="clearfix">
-                                            <img src="{% static 'assets/images/xs/avatar9.jpg' %}" alt="avatar" />
-                                            <div class="about">
-                                                <div class="name">Dean Henry</div>
-                                                <div class="status"> <i class="zmdi zmdi-circle offline"></i> offline since Oct 28 </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div role="tabpanel" class="tab-pane stretchRight" id="groups">
-                                    <ul class="chat-list list-unstyled m-b-0">
-                                        <li class="clearfix">
-                                            <img src="{% static 'assets/images/xs/avatar6.jpg' %}" alt="avatar"/>
-                                            <div class="about">
-                                                <div class="name">PHP Lead</div>
-                                                <div class="status">6 People </div>
-                                            </div>
-                                        </li>
-                                        <li class="clearfix">
-                                            <img src="{% static 'assets/images/xs/avatar7.jpg' %}" alt="avatar"/>
-                                            <div class="about">
-                                                <div class="name">UI UX Designer</div>
-                                                <div class="status">10 People </div>
-                                            </div>
-                                        </li>
-                                        <li class="clearfix">
-                                            <img src="{% static 'assets/images/xs/avatar8.jpg' %}" alt="avatar"/>
-                                            <div class="about">
-                                                <div class="name">TL Groups</div>
-                                                <div class="status">2 People </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
+                        <h5>Blood Pressure</h5>
+                        <div class="row">
+                            <div class="col-md-5 col-5">
+                                <span>Weekly avg Sys<span>
+                                        <h6 class="col-indigo">{{ pressureData.2.sys }}</h6>
                             </div>
-                        </div>                        
+                            <div class="col-md-5 col-5">
+                                <span>Weekly avg Dia</span>
+                                <h6 class="col-indigo">{{ pressureData.2.dia }}</h6>
+                            </div>
+                        </div>
+                        <div class="sparkline" data-type="line" data-spot-Radius="3"
+                            data-highlight-Spot-Color="rgb(63, 81, 181)"
+                            data-highlight-Line-Color="#222" data-min-Spot-Color="rgb(233, 30, 99)"
+                            data-max-Spot-Color="rgb(63, 81, 181)"
+                            data-spot-Color="rgb(63, 81, 181, 0.7)" data-offset="90" data-width="100%"
+                            data-height="50px" data-line-Width="1" data-line-Color="#3F51B5"
+                            data-fill-Color="#7b84b8">
+                            {% for data in pressureData %}
+                            {{data.sys}},
+                            {% endfor %}
+                            110
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="body">
+                        <h5>Sleep</h5>
+                        <div class="row">
+                            <div class="col-md-5 col-5">
+                                <span>Average deep sleep<span>
+                                        <h6 class="col-red">70.40%</h6>
+                            </div>
+                            <div class="col-md-5 col-5">
+                                <span>Average duration</span>
+                                <h6 class="col-red">6:59 hrs</h6>
+                            </div>
+                        </div>
+                        <div class="sparkline" data-type="line" data-spot-Radius="2"
+                            data-highlight-Spot-Color="rgb(233, 30, 99)"
+                            data-highlight-Line-Color="#222" data-min-Spot-Color="rgb(233, 30, 99)"
+                            data-max-Spot-Color="rgb(96, 125, 139)"
+                            data-spot-Color="rgb(96, 125, 139, 0.7)" data-offset="90" data-width="100%"
+                            data-height="50px" data-line-Width="1" data-line-Color="#ec3b57"
+                            data-fill-Color="#eb94a2"> 6,4,7,8,4,3,2,2,5,6,7,4,1,5,7,9,9,8,7,6 </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="body">
+                        <h5>Appetite</h5>
+                        <div class="row">
+                            <div class="col-md-5 col-5">
+                                <span>Overall Appetite<span>
+                                        <h6 class="col-green">Good</h6>
+                            </div>
+                        </div>
+                        <div class="sparkline" data-type="line" data-spot-Radius="3"
+                            data-highlight-Spot-Color="rgb(233, 30, 99)"
+                            data-highlight-Line-Color="#222" data-min-Spot-Color="rgb(233, 30, 99)"
+                            data-max-Spot-Color="rgb(120, 184, 62)"
+                            data-spot-Color="rgb(120, 184, 62, 0.7)" data-offset="90" data-width="100%"
+                            data-height="50px" data-line-Width="1" data-line-Color="#50d38a)"
+                            data-fill-Color="#94d3b0">
+                            {% for data in foodData %}
+                            {{data.appetite}},
+                            {% endfor %}
+                            4
+                        </div>
                     </div>
                 </div>
             </div>
+            
         </div>
     </div>
 </section>
 {% endblock %}
 
 {% block scripts %}
-<script src="{% static 'assets/bundles/libscripts.bundle.js' %}"></script> <!-- Lib Scripts Plugin Js --> 
-<script src="{% static 'assets/bundles/vendorscripts.bundle.js' %}"></script> <!-- Lib Scripts Plugin Js --> 
+<script src="{% static 'assets/bundles/libscripts.bundle.js' %}"></script> <!-- Lib Scripts Plugin Js -->
+<script src="{% static 'assets/bundles/vendorscripts.bundle.js' %}"></script> <!-- Lib Scripts Plugin Js -->
 
 <script src="{% static 'assets/bundles/mainscripts.bundle.js' %}"></script><!-- Custom Js -->
 
 <script>
-    $(".list_btn").on('click',function(){
+    $(".list_btn").on('click', function () {
         $("#plist").toggleClass("open");
     });
-    $(".chat-header .btn-detail").on('click',function(){
+    $(".chat-header .btn-detail").on('click', function () {
         $(".chat .user_detail").toggleClass("show");
     });
 </script>
+<script src="{% static 'assets/bundles/knob.bundle.js' %}"></script> <!-- Jquery Knob Plugin Js -->
+<script src="{% static 'assets/bundles/morrisscripts.bundle.js' %}"></script> <!-- Morris Plugin Js -->
+<script src="{% static 'assets/bundles/fullcalendarscripts.bundle.js' %}"></script>
+<!--/ calender javascripts -->
+
+<script src="{% static 'assets/bundles/mainscripts.bundle.js' %}"></script>
+<script src="{% static 'assets/js/pages/calendar/calendar.js' %}"></script>
+<script src="{% static 'assets/js/pages/profile.js' %}"></script>
+
+<script src="{% static 'assets/bundles/sparkline.bundle.js' %}"></script> <!-- sparkline Plugin Js -->
+<script src="{% static 'assets/bundles/jvectormap.bundle.js' %}"></script> <!-- JVectorMap Plugin Js -->
 {% endblock %}
