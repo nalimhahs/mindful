@@ -9,6 +9,7 @@ class PatientData(models.Model):
     # socialdata = models.ForeignKey()
     anxiety_quiz_score = models.IntegerField()
     depression_quiz_score = models.IntegerField()
+    lifestyle_quiz_score = models.IntegerField()
     current_medications = models.CharField(max_length=100)
     # chatbot_data = models.
 
