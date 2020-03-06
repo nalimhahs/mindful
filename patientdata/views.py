@@ -8,5 +8,5 @@ def getPatientDataView(request):
     sleepData = SleepData.objects.filter(patient=patientData)
     foodData = FoodData.objects.filter(patient=patientData)
     pressureData = PressureData.objects.filter(patient=patientData)
-    
-    return render(request, '', {'patientData': patientData, 'sleepData': sleepData, 'foodData': foodData, 'pressureData': pressureData})
+
+    return render(request, 'patientdata/data-dash.html', {'patientData': patientData, 'sleepData': sleepData, 'foodData': foodData, 'pressureData': pressureData})
