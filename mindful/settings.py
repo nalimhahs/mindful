@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'contact',
     'location',
     'socialanalysis',
+    'patientdata',
 ]
 
 MIDDLEWARE = [

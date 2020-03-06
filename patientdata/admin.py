@@ -1,6 +1,8 @@
 from django.contrib import admin
-from .models import PatientData, SleepData
+from .models import PatientData, SleepData, FoodData, PressureData
 # Register your models here.
 
 admin.site.register(PatientData)
 admin.site.register(SleepData)
+admin.site.register(FoodData)
+admin.site.register(PressureData)

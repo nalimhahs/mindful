@@ -18,20 +18,25 @@ class PatientData(models.Model):
 
 class FoodData(models.Model):
 
-    consumption = models.IntegerField(choices=range(1, 10))
+    choices = ((1, 'Very poor'), (2, 'poor'), (3, 'fair'), (4, 'good'), (5, 'very good'))
+    apettite = models.IntegerField(choices=choices)
     date = models.DateField()
     patient = models.ForeignKey(PatientData, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.patient.patient.username + ':' + str(self.date)
 
 
 class PressureData(models.Model):
 
-    data = models.IntegerField()
+    sys = models.IntegerField()
+    dia = models.IntegerField()
     patient = models.ForeignKey(
         PatientData, on_delete=models.CASCADE)
     date = models.DateField()
 
     def __str__(self):
-        return self.patient.username + ':' + str(date)
+        return self.patient.patient.username + ':' + str(self.date)
 
 
 class SleepData(models.Model):
@@ -44,4 +49,4 @@ class SleepData(models.Model):
     date = models.DateField()
 
     def __str__(self):
-        return self.patient.username + ':' + str(date)
+        return self.patient.patient.username + ':' + str(self.date)
