@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'contact',
     'location',
     'socialanalysis',
+    'questionaire',
 ]
 
 MIDDLEWARE = [

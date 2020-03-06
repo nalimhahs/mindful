@@ -15,6 +15,7 @@ urlpatterns = [
     path('contacts/', include('contact.urls')),
     path('location/', include('location.urls')),
     path('analyse/', include('socialanalysis.urls')),
+    path('questionaire/', include('questionaire.urls')),
 ]
 
 if settings.DEBUG:
