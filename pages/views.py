@@ -7,7 +7,7 @@ from .models import Poster
 class HomePageView(CreateView):
     model = Poster
     fields = ['title', 'content']
-    template_name = 'pages/home.html'
+    template_name = 'base.html'
 
     def get_success_url(self):
         return reverse_lazy("home", args=[])  

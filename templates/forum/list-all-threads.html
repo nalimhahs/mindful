@@ -1,3 +1,8 @@
+{% extends 'base.html' %}
+
+{% block title %}All threads{% endblock %}
+{% block body %}
 {% for thread in threads %}
 {{ thread.title }}
 {% endfor %}
+{% endblock %}

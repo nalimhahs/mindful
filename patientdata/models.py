@@ -4,17 +4,34 @@ from django.conf import settings
 
 class PatientData(models.Model):
 
-    patient = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    patient = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     # socialdata = models.ForeignKey()
-    # anxiety_quiz = models.ForeignKey()
-    # depression_quiz = models.ForeignKey()
+    anxiety_quiz_score = models.IntegerField()
+    depression_quiz_score = models.IntegerField()
     current_medications = models.CharField(max_length=100)
     # chatbot_data = models.
-    # pressure_data = models.CharField()
-    # food_data = models.ForeignKey()
 
     def __str__(self):
-        return self.patient.first_name
+        return self.patient.username
+
+
+class FoodData(models.Model):
+
+    consumption = models.IntegerField(choices=range(1, 10))
+    date = models.DateField()
+    patient = models.ForeignKey(PatientData, on_delete=models.CASCADE)
+
+
+class PressureData(models.Model):
+
+    data = models.IntegerField()
+    patient = models.ForeignKey(
+        PatientData, on_delete=models.CASCADE)
+    date = models.DateField()
+
+    def __str__(self):
+        return self.patient.username + ':' + str(date)
 
 
 class SleepData(models.Model):
@@ -27,4 +44,4 @@ class SleepData(models.Model):
     date = models.DateField()
 
     def __str__(self):
-        return self.date
+        return self.patient.username + ':' + str(date)
