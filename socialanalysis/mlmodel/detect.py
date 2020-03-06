@@ -106,10 +106,7 @@ def datreeINPUT(inputtweet):
         predictt = "Negative"
     else:
         print("Nothing")
-
-    print("\n*****************")
-    print(predictt)
-    print("*****************")
+        
     return predictt
 
 # datreeINPUT(inputtweet)
