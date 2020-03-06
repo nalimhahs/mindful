@@ -20,7 +20,7 @@ class PatientData(models.Model):
 class FoodData(models.Model):
 
     choices = ((1, 'Very poor'), (2, 'poor'), (3, 'fair'), (4, 'good'), (5, 'very good'))
-    apettite = models.IntegerField(choices=choices)
+    appetite = models.IntegerField(choices=choices)
     date = models.DateField()
     patient = models.ForeignKey(PatientData, on_delete=models.CASCADE)
 

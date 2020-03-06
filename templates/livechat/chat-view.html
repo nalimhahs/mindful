@@ -1,13 +1,240 @@
+{% extends 'base.html' %}
 <h1>{{ room }}</h1>
 <br>
-{% for chat in chats %}
-    {% if user == chat.user %}
-        <p style="color: blue;">{{chat.message}}</p>
-    {% else %}
-        <p style="color: red;">{{chat.message}}</p>
-    {% endif %}
-{% endfor %}
+
 <form method="post">{% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Save">
 </form>
+{% load static %}
+{% block body %}
+<section class="content chat-app">
+    <div class="container-fluid">
+        <div class="block-header">
+            <div class="row">
+                <div class="col-lg-5 col-md-5 col-sm-12">
+                    <h2>Chat - {{ room }}</h2>
+                </div>            
+                <div class="col-lg-7 col-md-7 col-sm-12">
+                    <div class="input-group m-b-0">                
+                        <input type="text" class="form-control" placeholder="Search...">
+                        <span class="input-group-addon">
+                            <i class="zmdi zmdi-search"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <div class="row clearfix">
+            <div class="col-lg-8 col-md-7">
+                <div class="card">
+                    <div class="body overflowhidden">
+                        <div class="chat">
+                            <div class="user_detail">                                
+                                <div class="row profile_state">
+                                    <div class="col-12">                                            
+                                        <small class="text-muted">Email address: </small>
+                                        <p>michael@gmail.com</p>
+                                        <hr>
+                                        <small class="text-muted">Phone: </small>
+                                        <p>+ 202-555-9191</p>
+                                        <hr>
+                                        <small class="text-muted">Mobile: </small>
+                                        <p>+ 202-555-2828</p>
+                                        <hr>
+                                        <small class="text-muted">Birth Date: </small>
+                                        <p class="m-b-0">October 22th, 1990</p>
+                                        <hr>
+                                    </div>
+                                    <div class="col-lg-4 col-md-12 col-6">
+                                        <div class="body">
+                                            <i class="zmdi zmdi-thumb-up col-blue"></i>
+                                            <h5 class="m-b-0 number count-to" data-from="0" data-to="1203" data-speed="1000" data-fresh-interval="700">1203</h5>
+                                            <small>Likes</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-12 col-6">
+                                        <div class="body">
+                                            <i class="zmdi zmdi-account text-success"></i>
+                                            <h5 class="m-b-0 number count-to" data-from="0" data-to="1980" data-speed="1000" data-fresh-interval="700">1980</h5>
+                                            <small>Profile Views</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-12 col-6">
+                                        <div class="body">
+                                            <i class="zmdi zmdi-attachment text-warning"></i>
+                                            <h5 class="m-b-0 number count-to" data-from="0" data-to="52" data-speed="1000" data-fresh-interval="700">52</h5>
+                                            <small>Attachment</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chat-header clearfix">
+                                <a href="javascript:void(0);" class="btn-detail"><img src="{% static 'assets/images/xs/avatar2.jpg' %}" alt="avatar" />
+                                    <div class="chat-about">
+                                        <div class="chat-with">Aiden Chavez</div>
+                                        <div class="chat-num-messages">already 8 messages</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <hr>
+                            <div class="chat-history clearfix">
+                                <ul class="">
+                                    {% for chat in chats %}
+                                        {% if user == chat.user %}
+                                            <li class="clearfix">
+                                                <div class="message-data text-right"> <span class="message-data-time" >{{chat.created}}</span> &nbsp; &nbsp; <span class="message-data-name" >Me</span> <i class="zmdi zmdi-circle me"></i> </div>
+                                                <div class="message text-right other-message float-right">{{chat.message}}</div>
+                                            </li>
+                                        {% else %}
+                                            <li>
+                                                <div class="message-data">
+                                                    <span class="message-data-name"><i class="zmdi zmdi-circle online"></i> {{user.first_name}}</span> <span class="message-data-time">{{chat.created}}</span>
+                                                </div>
+                                                <div class="message my-message">
+                                                    <span>{{chat.message}}</span>                                            
+                                                </div>
+                                            </li>
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <hr>
+                            <div class="chat-message clearfix">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Enter text here...">
+                                    <span class="input-group-addon"><i class="zmdi zmdi-mail-send"></i></span>
+                                </div>
+                                <a href="javascript:void(0);" class="btn btn-raised btn-warning btn-round"><i class="zmdi zmdi-camera"></i></a>
+                                <a href="javascript:void(0);" class="btn btn-raised btn-info btn-round"><i class="zmdi zmdi-file-text"></i></a>                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-5">
+                <div class="card">
+                    <div class="body">
+                        <div id="plist" class="people-list">                            
+                            <ul class="nav nav-tabs padding-0" role="tablist">
+                                <li class="nav-item inlineblock"><a class="nav-link active" data-toggle="tab" href="#people">People</a></li>
+                                <li class="nav-item inlineblock"><a class="nav-link" data-toggle="tab" href="#groups">Groups</a></li>
+                            </ul>
+                            <div class="tab-content m-t-20">
+                                <div role="tabpanel" class="tab-pane stretchRight active" id="people">
+                                    <ul class="chat-list list-unstyled m-b-0">
+                                        <li class="clearfix">
+                                            <img src="{% static 'assets/images/xs/avatar1.jpg' %}" alt="avatar" />
+                                            <div class="about">
+                                                <div class="name">Vincent Porter</div>
+                                                <div class="status"> <i class="zmdi zmdi-circle offline"></i> left 7 mins ago </div>                                            
+                                            </div>
+                                        </li>
+                                        <li class="clearfix active">
+                                            <img src="{% static 'assets/images/xs/avatar2.jpg' %}" alt="avatar" />
+                                            <div class="about">
+                                                <div class="name">Aiden Chavez</div>
+                                                <div class="status"> <i class="zmdi zmdi-circle online"></i> online </div>
+                                            </div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <img src="{% static 'assets/images/xs/avatar3.jpg' %}" alt="avatar" />
+                                            <div class="about">
+                                                <div class="name">Mike Thomas</div>
+                                                <div class="status"> <i class="zmdi zmdi-circle online"></i> online </div>
+                                            </div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <img src="{% static 'assets/images/xs/avatar4.jpg' %}" alt="avatar" />
+                                            <div class="about">
+                                                <div class="name">Erica Hughes</div>
+                                                <div class="status"> <i class="zmdi zmdi-circle online"></i> online </div>
+                                            </div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <img src="{% static 'assets/images/xs/avatar5.jpg' %}" alt="avatar" />
+                                            <div class="about">
+                                                <div class="name">Ginger Johnston</div>
+                                                <div class="status"> <i class="zmdi zmdi-circle online"></i> online </div>
+                                            </div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <img src="{% static 'assets/images/xs/avatar6.jpg' %}" alt="avatar" />
+                                            <div class="about">
+                                                <div class="name">Tracy Carpenter</div>
+                                                <div class="status"> <i class="zmdi zmdi-circle offline"></i> left 30 mins ago </div>
+                                            </div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <img src="{% static 'assets/images/xs/avatar7.jpg' %}" alt="avatar" />
+                                            <div class="about">
+                                                <div class="name">Christian Kelly</div>
+                                                <div class="status"> <i class="zmdi zmdi-circle offline"></i> left 10 hours ago </div>
+                                            </div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <img src="{% static 'assets/images/xs/avatar8.jpg' %}" alt="avatar" />
+                                            <div class="about">
+                                                <div class="name">Monica Ward</div>
+                                                <div class="status"> <i class="zmdi zmdi-circle online"></i> online </div>
+                                            </div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <img src="{% static 'assets/images/xs/avatar9.jpg' %}" alt="avatar" />
+                                            <div class="about">
+                                                <div class="name">Dean Henry</div>
+                                                <div class="status"> <i class="zmdi zmdi-circle offline"></i> offline since Oct 28 </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div role="tabpanel" class="tab-pane stretchRight" id="groups">
+                                    <ul class="chat-list list-unstyled m-b-0">
+                                        <li class="clearfix">
+                                            <img src="{% static 'assets/images/xs/avatar6.jpg' %}" alt="avatar"/>
+                                            <div class="about">
+                                                <div class="name">PHP Lead</div>
+                                                <div class="status">6 People </div>
+                                            </div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <img src="{% static 'assets/images/xs/avatar7.jpg' %}" alt="avatar"/>
+                                            <div class="about">
+                                                <div class="name">UI UX Designer</div>
+                                                <div class="status">10 People </div>
+                                            </div>
+                                        </li>
+                                        <li class="clearfix">
+                                            <img src="{% static 'assets/images/xs/avatar8.jpg' %}" alt="avatar"/>
+                                            <div class="about">
+                                                <div class="name">TL Groups</div>
+                                                <div class="status">2 People </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'assets/bundles/libscripts.bundle.js' %}"></script> <!-- Lib Scripts Plugin Js --> 
+<script src="{% static 'assets/bundles/vendorscripts.bundle.js' %}"></script> <!-- Lib Scripts Plugin Js --> 
+
+<script src="{% static 'assets/bundles/mainscripts.bundle.js' %}"></script><!-- Custom Js -->
+
+<script>
+    $(".list_btn").on('click',function(){
+        $("#plist").toggleClass("open");
+    });
+    $(".chat-header .btn-detail").on('click',function(){
+        $(".chat .user_detail").toggleClass("show");
+    });
+</script>
+{% endblock %}
