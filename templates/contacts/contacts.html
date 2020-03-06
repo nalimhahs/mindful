@@ -637,116 +637,55 @@
                         <div class="row">
                             <div class="col-lg-3 col-md-6 col-sm-12">
                                 <div class="card">
+                                        {%for contacts in contacts.all%}
                                     <div class="body text-center">
                                         <div class="chart easy-pie-chart-1" data-percent="75"> <span><img src="assets/images/sm/avatar1.jpg" alt="user" class="rounded-circle"/></span> </div>
-                                        <h6>John Smith</h6>
+                                        <h6>{{contacts.name}}</h6>
                                         <ul class="social-links list-unstyled">
                                             <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
                                             <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
                                             <li><a title="instagram" href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
                                         </ul>
-                                        <small>795 Folsom Ave, Suite 600 San Francisco,<br> CADGE 94107</small>
+                                        <small>{{contacts.address}}<br>{{contacts.phoneno}}</small>
                                     </div>
+                                    {%endfor%} 
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6 col-sm-12">
                                 <div class="card">
-                                    <div class="body text-center">
-                                        <div class="chart easy-pie-chart-1" data-percent="67"> <span><img src="assets/images/sm/avatar2.jpg" alt="user" class="rounded-circle"/></span> </div>
-                                        <h6>Hossein Shams</h6>
-                                        <ul class="social-links list-unstyled">
-                                            <li><a title="google-plus" href="#"><i class="zmdi zmdi-google-plus-box"></i></a></li>
-                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="linkedin" href="javascript:void(0);"><i class="zmdi zmdi-linkedin-box"></i></a></li>
-                                        </ul>
-                                        <small>795 Folsom Ave, Suite 600 San Francisco,<br> CADGE 94107</small>
-                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6 col-sm-12">
                                 <div class="card">
-                                    <div class="body text-center">
-                                        <div class="chart easy-pie-chart-1" data-percent="23"> <span><img src="assets/images/sm/avatar3.jpg" alt="user" class="rounded-circle"/></span> </div>
-                                        <h6>Maryam Amiri</h6>
-                                        <ul class="social-links list-unstyled">
-                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
-                                        </ul>
-                                        <small>795 Folsom Ave, Suite 600 San Francisco,<br> CADGE 94107</small>
-                                    </div>
+                                
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6 col-sm-12">
                                 <div class="card">
-                                    <div class="body text-center">
-                                        <div class="chart easy-pie-chart-1" data-percent="49"> <span><img src="assets/images/sm/avatar4.jpg" alt="user" class="rounded-circle"/></span> </div>
-                                        <h6>Tim Hank</h6>
-                                        <ul class="social-links list-unstyled">
-                                            <li><a title="linkedin" href="#"><i class="zmdi zmdi-linkedin-box"></i></a></li>
-                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
-                                        </ul>
-                                        <small>795 Folsom Ave, Suite 600 San Francisco,<br> CADGE 94107</small>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>                        
                         <div class="row">
                             <div class="col-lg-3 col-md-6 col-sm-12">
                                 <div class="card">
-                                    <div class="body text-center">
-                                        <div class="chart easy-pie-chart-1" data-percent="75"> <span><img src="assets/images/sm/avatar5.jpg" alt="user" class="rounded-circle"/></span> </div>
-                                        <h6>John Smith</h6>
-                                        <ul class="social-links list-unstyled">
-                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
-                                        </ul>
-                                        <small>795 Folsom Ave, Suite 600 San Francisco,<br> CADGE 94107</small>
-                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6 col-sm-12">
                                 <div class="card">
-                                    <div class="body text-center">
-                                        <div class="chart easy-pie-chart-1" data-percent="88"> <span><img src="assets/images/sm/avatar1.jpg" alt="user" class="rounded-circle"/></span> </div>
-                                        <h6>Frank Camly</h6>
-                                        <ul class="social-links list-unstyled">
-                                            <li><a title="google-plus" href="#"><i class="zmdi zmdi-google-plus-box"></i></a></li>
-                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="linkedin" href="javascript:void(0);"><i class="zmdi zmdi-linkedin-box"></i></a></li>
-                                        </ul>
-                                        <small>795 Folsom Ave, Suite 600 San Francisco,<br> CADGE 94107</small>
-                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6 col-sm-12">
                                 <div class="card">
-                                    <div class="body text-center">
-                                        <div class="chart easy-pie-chart-1" data-percent="37"> <span><img src="assets/images/sm/avatar2.jpg" alt="user" class="rounded-circle"/></span> </div>
-                                        <h6>Gary Camara</h6>
-                                        <ul class="social-links list-unstyled">
-                                            <li><a title="facebook" href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
-                                        </ul>
-                                        <small>795 Folsom Ave, Suite 600 San Francisco,<br> CADGE 94107</small>
-                                    </div>
+                                    
                                 </div>
                             </div>
                             <div class="col-lg-3 col-md-6 col-sm-12">
                                 <div class="card">
-                                    <div class="body text-center">
-                                        <div class="chart easy-pie-chart-1" data-percent="79"> <span><img src="assets/images/sm/avatar6.jpg" alt="user" class="rounded-circle"/></span> </div>
-                                        <h6>Fidel Tonn</h6>
-                                        <ul class="social-links list-unstyled">
-                                            <li><a title="linkedin" href="#"><i class="zmdi zmdi-linkedin-box"></i></a></li>
-                                            <li><a title="twitter" href="#"><i class="zmdi zmdi-twitter"></i></a></li>
-                                            <li><a title="instagram" href="javascript:void(0);"><i class="zmdi zmdi-instagram"></i></a></li>
-                                        </ul>
-                                        <small>795 Folsom Ave, Suite 600 San Francisco,<br> CADGE 94107</small>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
