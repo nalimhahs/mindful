@@ -26,7 +26,7 @@ class Answer(models.Model):
                (1, 'Rarely'),
                (0, 'Sometimes'),
                (-1, 'Often'),
-               (2, 'Very Often'), ]
+               (-2, 'Very Often'), ]
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                              on_delete=models.CASCADE)

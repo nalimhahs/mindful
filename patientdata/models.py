@@ -7,10 +7,10 @@ class PatientData(models.Model):
     patient = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     # socialdata = models.ForeignKey()
-    anxiety_quiz_score = models.IntegerField()
-    depression_quiz_score = models.IntegerField()
-    lifestyle_quiz_score = models.IntegerField()
-    current_medications = models.CharField(max_length=100)
+    anxiety_quiz_score = models.IntegerField(blank=True, null=True)
+    depression_quiz_score = models.IntegerField(blank=True, null=True)
+    lifestyle_quiz_score = models.IntegerField(blank=True, null=True)
+    current_medications = models.CharField(max_length=100, blank=True, null=True)
     # chatbot_data = models.
 
     def __str__(self):
