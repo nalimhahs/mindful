@@ -1,16 +1,11 @@
 {% load static %}
-{%  %}
+{% block body %}
     <section class="content blog-page">
         <div class="container-fluid">
             <div class="block-header">
                 <div class="row clearfix">
                     <div class="col-lg-5 col-md-5 col-sm-12">
-                        <h2>Blog Detail</h2>
-                        <ul class="breadcrumb p-l-0 p-b-0">
-                            <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="blog-dashboard.html">Blog</a></li>
-                            <li class="breadcrumb-item active">Blog Detail</li>
-                        </ul>
+                        <h2>Events</h2>
                     </div>
                     <div class="col-lg-7 col-md-7 col-sm-12">
                         <div class="input-group m-b-0">
@@ -65,7 +60,7 @@
                                 </a>
                             </div>
                         </div>
-                        {%endfor%}
+                        {% endfor %}
                     </div>
                     <div class="card widget tag-clouds">
                         <div class="header">
@@ -86,11 +81,4 @@
             </div>
         </div>
     </section>
-    <!-- Jquery Core Js -->
-    <script src="{% static 'assets/bundles/libscripts.bundle.js' %}"></script> <!-- Lib Scripts Plugin Js -->
-    <script src="{% static 'assets/bundles/vendorscripts.bundle.js' %}"></script> <!-- Lib Scripts Plugin Js -->
-
-    <script src="{% static 'assets/bundles/mainscripts.bundle.js' %}"></script><!-- Custom Js -->
-</body>
-
-</html>
+{% endblock %}
