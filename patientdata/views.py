@@ -14,8 +14,8 @@ def getPatientDataView(request):
     pressureData = PressureData.objects.filter(patient=patientData)
     threads = Thread.objects.filter(
         post__in=Post.objects.filter(user=request.user))
-
-    return render(request, 'patientdata/data-dash.html', {'patientData': patientData, 'sleepData': sleepData, 'foodData': foodData, 'pressureData': pressureData, 'threads': threads})
+    chats = ChatRoom.objects.filter(patient=request.user)
+    return render(request, 'patientdata/data-dash.html', {'patientData': patientData, 'sleepData': sleepData, 'foodData': foodData, 'pressureData': pressureData, 'threads': threads, 'chats': chats})
 
 
 def getAllDoctorsView(request):

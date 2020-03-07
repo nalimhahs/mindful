@@ -30,4 +30,4 @@ def chatView(request, room):
     else:
         form = ChatForm()
 
-    return render(request, 'livechat/chat-view.html', {'patientData': patientData, 'sleepData': sleepData, 'foodData': foodData, 'pressureData': pressureData, 'chats': chats, 'form': form, 'room': room})
+    return render(request, 'livechat/chat-view.html', {'patientData': patientData, 'sleepData': sleepData, 'foodData': foodData, 'pressureData': pressureData, 'chats': chats, 'form': form, 'room': current_room})

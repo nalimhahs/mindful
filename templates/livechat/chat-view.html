@@ -72,7 +72,13 @@
                                 <a href="javascript:void(0);" class="btn-detail"><img
                                         src="{% static 'assets/images/xs/avatar2.jpg' %}" alt="avatar" />
                                     <div class="chat-about">
-                                        <div class="chat-with">{{chats.2.user.first_name}}</div>
+                                        <div class="chat-with">
+                                            {% if user == room.doctor %} 
+                                                {{ room.patient.first_name }}
+                                            {% else %}
+                                                {{ room.doctor.first_name }}
+                                            {% endif %}
+                                        </div>
                                     </div>
                                 </a>
                             </div>
