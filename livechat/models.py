@@ -8,6 +8,7 @@ class ChatRoom(models.Model):
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='patient')
     doctor = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='doctor')
+    active = models.BooleanField(default=False)
 
     def __str__(self):
         return self.patient.username + ':' + self.doctor.username

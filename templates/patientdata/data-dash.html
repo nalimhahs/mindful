@@ -68,8 +68,8 @@
                                     <div class="body">
                                         <i class="zmdi zmdi-attachment zmdi-hc-2x"></i>
                                         <h5 class="m-b-0 number count-to" data-from="0" data-to="0" data-speed="1000"
-                                            data-fresh-interval="700">0</h5>
-                                        <small>Medicines with side-effects</small>
+                                            data-fresh-interval="700">Good</h5>
+                                        <small>Social Media Analysis</small>
                                         <br>
                                         <small>Whooo!</small>
                                     </div>
@@ -258,16 +258,18 @@
                                         <h5 class="m-t-20 m-b-0 post_title">Update Anxiety test scores</h5>
                                         <p>It looks like you haven't taken the anxiety test in a while!</p>
                                         <div class="form-group m-b-0">
-                                            <button class="btn btn-info btn-round">Take the test now!</button>
-                                            <button class="btn btn-primary btn-simple btn-round">Reach Out!</button>
+                                            <a href="{% url 'start-view' 1 %}">
+                                                <button class="btn btn-info btn-round">Take the test now!</button>
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="body mt-2">
                                         <h5 class="m-t-20 m-b-0 post_title">Update Lifestyle test scores</h5>
                                         <p>It looks like you haven't taken the lifestyle test in a while!</p>
                                         <div class="form-group m-b-0">
-                                            <button class="btn btn-info btn-round">Take the test now!</button>
-                                            <button class="btn btn-primary btn-simple btn-round">Reach Out!</button>
+                                            <a href="{% url 'start-view' 3 %}">
+                                                <button class="btn btn-info btn-round">Take the test now!</button>
+                                            </a>                                            
                                         </div>
                                     </div>
                                 </div>

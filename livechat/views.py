@@ -7,13 +7,12 @@ from .models import Chat, ChatRoom
 from patientdata.models import *
 
 
-
 @login_required
 def chatView(request, room):
 
     current_room = get_object_or_404(ChatRoom, pk=room)
     if request.user.id not in (current_room.patient.id, current_room.doctor.id):
-        raise  Http404('Chat room not found!')
+        raise Http404('Chat room not found!')
     chats = Chat.objects.filter(room=current_room).order_by('created')
     patientData = PatientData.objects.get(patient=request.user)
     sleepData = SleepData.objects.filter(patient=patientData)
