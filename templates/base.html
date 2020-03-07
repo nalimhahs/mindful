@@ -62,16 +62,11 @@
                     </div>
                 </li>
                 <li class="header">Main</li>
-                <li> <a href="index.html"><i class="zmdi zmdi-home"></i><span>Dashboard</span></a></li>
-                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-swap-alt"></i><span>UI Elements</span></a>
-                </li>
-                <li class="header">FORMS, CHARTS, TABLES</li>
-                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-assignment"></i><span>Forms</span></a>
-                </li>
-                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-grid"></i><span>Tables</span></a>
-                </li>            
-                <li><a href="javascript:void(0);" class="menu-toggle"><i class="zmdi zmdi-chart"></i><span>Charts</span></a>
-                </li>               
+                <li><a href={% url 'data-dash' %}><i class="zmdi zmdi-home"></i><span>Home</span></a></li>
+                <li><a href={% url 'all-threads' %}><i class="zmdi zmdi-home"></i><span>Forum</span></a></li>
+                <li><a href={% url 'contacts' %}><i class="zmdi zmdi-home"></i><span>Contact</span></a></li>
+                <li><a href={% url 'allnews' %}><i class="zmdi zmdi-home"></i><span>News</span></a></li>
+                <li><a href={% url 'allevents' %}><i class="zmdi zmdi-home"></i><span>Events</span></a></li>             
             </ul>
         </div>
     </div>
