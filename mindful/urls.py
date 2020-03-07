@@ -16,7 +16,8 @@ urlpatterns = [
     path('location/', include('location.urls')),
     path('analyse/', include('socialanalysis.urls')),
     path('questionaire/', include('questionaire.urls')),
-    path('dash/', include('patientdata.urls'))
+    path('dash/', include('patientdata.urls')),
+    path('appointment/', include('appointment.urls'))
 ]
 
 if settings.DEBUG:

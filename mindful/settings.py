@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'socialanalysis',
     'patientdata',
     'questionaire',
+    'appointment',
 ]
 
 MIDDLEWARE = [
