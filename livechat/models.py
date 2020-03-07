@@ -24,3 +24,8 @@ class Chat(models.Model):
                              on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True)
     message = models.CharField(max_length=500)
+
+class Note(models.Model):
+
+    note = models.CharField(max_length=500)
+    room = models.ForeignKey(ChatRoom, on_delete=models.CASCADE)

@@ -126,9 +126,75 @@
                         </div>
                     </div>
                 </div>
+                {% if user.is_doc %}
+                <div class="card">
+                    <div class="body">
+                        <h5>Notes</h5>
+                        <p class="row">
+                            <ul>
+                                {% for note in notes %}
+                                <li>
+                                    {{note.note}}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </p>
+                        <form method="post" class="row" style="width: 100%">{% csrf_token %}
+                            <div class="col-9">
+                                {{ noteform|crispy }}
+                            </div>
+                            <div class="col-3 mt-4"><input type="submit" class="btn" value="Add Note"></div>
+                            
+                        </form>
+                    </div>
+                </div>
+                {% endif %}
             </div>
             {% if user.is_doc %}
             <div class="col-lg-5 col-md-5">
+                <div class="row">
+                    <div class="card text-center col-6">
+                        <div class="body">
+                            <h5 class="m-b-0">Stable</h5>
+                            <small>Social Media Analysis</small>
+                            <br>
+                            <small>All activity looks normal</small>
+                        </div>
+                    </div>
+                    <div class="card text-center col-6">
+                        <div class="body">
+                            <i class="zmdi zmdi-eye zmdi-hc-2x"></i>
+                            <h5 class="m-b-0 number count-to" data-from="0"
+                                data-to="{{patientData.lifestyle_quiz_score}}" data-speed="1000"
+                                data-fresh-interval="700">{{patientData.lifestyle_quiz_score}}</h5>
+                            <small>Lifestyle Score</small>
+                            <br>
+                            <small>You're doing great!</small>
+                        </div>
+                    </div>
+                    <div class="card text-center col-6">
+                        <div class="body">
+                            <i class="zmdi zmdi-comment-text zmdi-hc-2x"></i>
+                            <h5 class="m-b-0 number count-to" data-from="0"
+                                data-to="{{patientData.depression_quiz_score}}" data-speed="1000"
+                                data-fresh-interval="700">{{patientData.depression_quiz_score}}</h5>
+                            <small>Depression Score</small>
+                            <br>
+                            <small>You're doing great!</small>
+                        </div>
+                    </div>
+                    <div class="card text-center col-6 ">
+                        <div class="body">
+                            <i class="zmdi zmdi-thumb-up zmdi-hc-2x"></i>
+                            <h5 class="m-b-0 number count-to" data-from="0"
+                                data-to="{{patientData.anxiety_quiz_score}}" data-speed="1000"
+                                data-fresh-interval="700">{{patientData.anxiety_quiz_score}}</h5>
+                            <small>Anxiety Score</small>
+                            <br>
+                            <small>You're doing great!</small>
+                        </div>
+                    </div>
+                </div>
                 <div class="card">
                     <div class="body">
                         <h5>Blood Pressure</h5>
