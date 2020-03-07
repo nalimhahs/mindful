@@ -1,0 +1,89 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% load crispy_forms_tags %}
+{% block body %} 
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="block-header">
+            <div class="row clearfix">
+                <div class="col-lg-5 col-md-5 col-sm-12">
+                    <h2>Doctor Listings</h2>
+                </div>            
+                <div class="col-lg-7 col-md-7 col-sm-12">
+                    <div class="input-group m-b-0">                
+                        <input type="text" class="form-control" placeholder="Search...">
+                        <span class="input-group-addon">
+                            <i class="zmdi zmdi-search"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="card">                    
+                    <div class="body">
+                        <button type="button" class="btn btn-round btn-simple btn-sm btn-default btn-filter" data-target="all">All</button>
+                        <button type="button" class="btn btn-round btn-simple btn-sm btn-success btn-filter" data-target="approved">Psychologists</button>
+                        <!-- <button type="button" class="btn btn-round btn-simple btn-sm btn-warning btn-filter" data-target="suspended">Suspended</button>
+                        <button type="button" class="btn btn-round btn-simple btn-sm btn-info btn-filter" data-target="pending">Pending</button>
+                        <button type="button" class="btn btn-round btn-simple btn-sm btn-danger btn-filter" data-target="blocked">Blocked</button>  -->
+                    </div>
+                    <div class="header">
+                        <h2>Doctor Listing</h2>                        
+                    </div>
+                    <div class="body">
+                        <div class="table-responsive">
+                            <table class="table table-filter table-hover m-b-0">                                
+                                <tbody>
+                                    {% for doc in docs %}
+                                    <tr data-status="approved">
+                                        <td>Dr. {{doc.first_name}}</td>
+                                        <td><span class="badge badge-success">Psychologist</span></td>
+                                        <td width="250px">
+                                            <a href={% url 'docreq-dash' doc.pk %}>
+                                                <button class="btn btn-raised btn-primary waves-effect btn-round">Send Request</button>                           
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %} 
+
+{% block scripts %}
+<!-- Jquery Core Js -->
+<script src="{% static 'assets/bundles/libscripts.bundle.js' %}"></script>
+<script src="{% static 'assets/bundles/vendorscripts.bundle.js' %}"></script>
+<script src="{% static 'assets/bundles/mainscripts.bundle.js' %}"></script>
+<script>
+    $(document).ready(function () {
+        $('.star').on('click', function () {
+            $(this).toggleClass('star-checked');
+        });
+
+        $('.ckbox label').on('click', function () {
+            $(this).parents('tr').toggleClass('selected');
+        });
+
+        $('.btn-filter').on('click', function () {
+            var $target = $(this).data('target');
+            if ($target != 'all') {
+                $('.table tr').css('display', 'none');
+                $('.table tr[data-status="' + $target + '"]').fadeIn('slow');
+            } else {
+                $('.table tr').css('display', 'none').fadeIn('slow');
+            }
+        });
+    });
+</script>
+{% endblock %}

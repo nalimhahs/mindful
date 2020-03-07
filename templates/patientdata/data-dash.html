@@ -68,8 +68,8 @@
                                     <div class="body">
                                         <i class="zmdi zmdi-attachment zmdi-hc-2x"></i>
                                         <h5 class="m-b-0 number count-to" data-from="0" data-to="0" data-speed="1000"
-                                            data-fresh-interval="700">0</h5>
-                                        <small>Medicines with side-effects</small>
+                                            data-fresh-interval="700">Good</h5>
+                                        <small>Social Media Analysis</small>
                                         <br>
                                         <small>Whooo!</small>
                                     </div>
@@ -126,7 +126,7 @@
                                             data-max-Spot-Color="rgb(96, 125, 139)"
                                             data-spot-Color="rgb(96, 125, 139, 0.7)" data-offset="90" data-width="100%"
                                             data-height="50px" data-line-Width="1" data-line-Color="#ec3b57"
-                                            data-fill-Color="#eb94a2"> 6,4,7,8,4,3,2,2,5,6,7,4,1,5,7,9,9,8,7,6 </div>
+                                            data-fill-Color="#eb94a2"> 6,7,7,8,6,5,6,7,6,7,9,8,8,7,6 </div>
                                     </div>
                                 </div>
                             </div>
@@ -160,6 +160,34 @@
                             <div class="col-lg-4 col-md-12">
                                 <div class="card">
                                     <div class="header">
+                                        <h2><strong>Recent Chats</strong></h2>
+                                        <ul class="header-dropdown">
+                                            <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle"
+                                                    data-toggle="dropdown" role="button" aria-haspopup="true"
+                                                    aria-expanded="false"> <i class="zmdi zmdi-more"></i> </a>
+                                                <ul class="dropdown-menu dropdown-menu-right">
+                                                    <li><a href="javascript:void(0);">Update</a></li>
+                                                    <li><a href="javascript:void(0);" class="boxs-close">Delete</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="body m-b-20">
+                                        {% for chat in chats %}
+                                        <div class="event-name b-lightred row">
+                                            <div class="col-9">
+                                                <a href={% url 'chat-view' chat.id %}>
+                                                    <h6>Dr. {{ chat.doctor.first_name }}</h6>
+                                                </a>
+                                                <div>Discussion</div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="header">
                                         <h2><strong>Upcoming Appointments</strong></h2>
                                         <ul class="header-dropdown">
                                             <li class="dropdown"> <a href="javascript:void(0);" class="dropdown-toggle"
@@ -178,9 +206,9 @@
                                                 <h6>15 <span>Mar</span><span> 20</span></h6>
                                             </div>
                                             <div class="col-9">
-                                                <h6>Meet with Dr. Blah Blah</h6>
+                                                <h6>Meet with Dr. Ram</h6>
                                                 <p>Discuss stuff about something</p>
-                                                <address><i class="zmdi zmdi-pin"></i> 123 6th St. Melbourne, FL 32904
+                                                <address><i class="zmdi zmdi-pin"></i> Kochi
                                                 </address>
                                             </div>
                                         </div>
@@ -190,9 +218,9 @@
                                                 <h6>25 <span> Mar</span><span> 20</span></h6>
                                             </div>
                                             <div class="col-9">
-                                                <h6>Meet with Dr. Blah Blah</h6>
+                                                <h6>Meet with Dr. Farhaan</h6>
                                                 <p>Discuss stuff about something</p>
-                                                <address><i class="zmdi zmdi-pin"></i> 123 6th St. Melbourne, FL 32904
+                                                <address><i class="zmdi zmdi-pin"></i> Kochi
                                                 </address>
                                             </div>
                                         </div>
@@ -258,16 +286,27 @@
                                         <h5 class="m-t-20 m-b-0 post_title">Update Anxiety test scores</h5>
                                         <p>It looks like you haven't taken the anxiety test in a while!</p>
                                         <div class="form-group m-b-0">
-                                            <button class="btn btn-info btn-round">Take the test now!</button>
-                                            <button class="btn btn-primary btn-simple btn-round">Reach Out!</button>
+                                            <a href="{% url 'start-view' 1 %}">
+                                                <button class="btn btn-info btn-round">Take the test now!</button>
+                                            </a>
                                         </div>
                                     </div>
                                     <div class="body mt-2">
                                         <h5 class="m-t-20 m-b-0 post_title">Update Lifestyle test scores</h5>
                                         <p>It looks like you haven't taken the lifestyle test in a while!</p>
                                         <div class="form-group m-b-0">
-                                            <button class="btn btn-info btn-round">Take the test now!</button>
-                                            <button class="btn btn-primary btn-simple btn-round">Reach Out!</button>
+                                            <a href="{% url 'start-view' 3 %}">
+                                                <button class="btn btn-info btn-round">Take the test now!</button>
+                                            </a>                                            
+                                        </div>
+                                    </div>
+                                    <div class="body mt-2">
+                                        <h5 class="m-t-20 m-b-0 post_title">Update Depression test scores</h5>
+                                        <p>It looks like you haven't taken the Depression test in a while!</p>
+                                        <div class="form-group m-b-0">
+                                            <a href="{% url 'start-view' 2 %}">
+                                                <button class="btn btn-info btn-round">Take the test now!</button>
+                                            </a>                                            
                                         </div>
                                     </div>
                                 </div>

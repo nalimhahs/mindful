@@ -1,12 +1,8 @@
 {% extends 'base.html' %}
 <h1>{{ room }}</h1>
 <br>
-
-<form method="post">{% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Save">
-</form>
 {% load static %}
+{% load crispy_forms_tags %}
 {% block body %}
 <section class="content chat-app">
     <div class="container-fluid">
@@ -76,8 +72,13 @@
                                 <a href="javascript:void(0);" class="btn-detail"><img
                                         src="{% static 'assets/images/xs/avatar2.jpg' %}" alt="avatar" />
                                     <div class="chat-about">
-                                        <div class="chat-with">Aiden Chavez</div>
-                                        <div class="chat-num-messages">already 8 messages</div>
+                                        <div class="chat-with">
+                                            {% if user == room.doctor %} 
+                                                {{ room.patient.first_name }}
+                                            {% else %}
+                                                {{ room.doctor.first_name }}
+                                            {% endif %}
+                                        </div>
                                     </div>
                                 </a>
                             </div>
@@ -97,7 +98,7 @@
                                     <li>
                                         <div class="message-data">
                                             <span class="message-data-name"><i class="zmdi zmdi-circle online"></i>
-                                                {{user.first_name}}</span> <span
+                                                {{chat.user.first_name}}</span> <span
                                                 class="message-data-time">{{chat.created}}</span>
                                         </div>
                                         <div class="message my-message">
@@ -111,19 +112,89 @@
                             <hr>
                             <div class="chat-message clearfix">
                                 <div class="input-group">
-                                    <input type="text" class="form-control" placeholder="Enter text here...">
-                                    <span class="input-group-addon"><i class="zmdi zmdi-mail-send"></i></span>
+                                    <form method="post" class="row" style="width: 100%">{% csrf_token %}
+                                        <div class="col-9">
+                                            {{ form|crispy }}
+                                        </div>
+                                        <div class="col-3 mt-4"><input type="submit" class="btn" value="Send"></div>
+                                        
+                                    </form>
+                                    <!-- <input type="text" class="form-control" placeholder="Enter text here..."> -->
+                                    <!-- <span class="input-group-addon"><i class="zmdi zmdi-mail-send"></i></span> -->
                                 </div>
-                                <a href="javascript:void(0);" class="btn btn-raised btn-warning btn-round"><i
-                                        class="zmdi zmdi-camera"></i></a>
-                                <a href="javascript:void(0);" class="btn btn-raised btn-info btn-round"><i
-                                        class="zmdi zmdi-file-text"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
+                {% if user.is_doc %}
+                <div class="card">
+                    <div class="body">
+                        <h5>Notes</h5>
+                        <p class="row">
+                            <ul>
+                                {% for note in notes %}
+                                <li>
+                                    {{note.note}}
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </p>
+                        <form method="post" class="row" style="width: 100%">{% csrf_token %}
+                            <div class="col-9">
+                                {{ noteform|crispy }}
+                            </div>
+                            <div class="col-3 mt-4"><input type="submit" class="btn" value="Add Note"></div>
+                            
+                        </form>
+                    </div>
+                </div>
+                {% endif %}
             </div>
+            {% if user.is_doc %}
             <div class="col-lg-5 col-md-5">
+                <div class="row">
+                    <div class="card text-center col-6">
+                        <div class="body">
+                            <h5 class="m-b-0">Stable</h5>
+                            <small>Social Media Analysis</small>
+                            <br>
+                            <small>All activity looks normal</small>
+                        </div>
+                    </div>
+                    <div class="card text-center col-6">
+                        <div class="body">
+                            <i class="zmdi zmdi-eye zmdi-hc-2x"></i>
+                            <h5 class="m-b-0 number count-to" data-from="0"
+                                data-to="{{patientData.lifestyle_quiz_score}}" data-speed="1000"
+                                data-fresh-interval="700">{{patientData.lifestyle_quiz_score}}</h5>
+                            <small>Lifestyle Score</small>
+                            <br>
+                            <small>You're doing great!</small>
+                        </div>
+                    </div>
+                    <div class="card text-center col-6">
+                        <div class="body">
+                            <i class="zmdi zmdi-comment-text zmdi-hc-2x"></i>
+                            <h5 class="m-b-0 number count-to" data-from="0"
+                                data-to="{{patientData.depression_quiz_score}}" data-speed="1000"
+                                data-fresh-interval="700">{{patientData.depression_quiz_score}}</h5>
+                            <small>Depression Score</small>
+                            <br>
+                            <small>You're doing great!</small>
+                        </div>
+                    </div>
+                    <div class="card text-center col-6 ">
+                        <div class="body">
+                            <i class="zmdi zmdi-thumb-up zmdi-hc-2x"></i>
+                            <h5 class="m-b-0 number count-to" data-from="0"
+                                data-to="{{patientData.anxiety_quiz_score}}" data-speed="1000"
+                                data-fresh-interval="700">{{patientData.anxiety_quiz_score}}</h5>
+                            <small>Anxiety Score</small>
+                            <br>
+                            <small>You're doing great!</small>
+                        </div>
+                    </div>
+                </div>
                 <div class="card">
                     <div class="body">
                         <h5>Blood Pressure</h5>
@@ -145,7 +216,7 @@
                             data-height="50px" data-line-Width="1" data-line-Color="#3F51B5"
                             data-fill-Color="#7b84b8">
                             {% for data in pressureData %}
-                            {{data.sys}},
+                                {{data.sys}},
                             {% endfor %}
                             110
                         </div>
@@ -197,35 +268,22 @@
                     </div>
                 </div>
             </div>
-            
+            {% endif %}
         </div>
     </div>
 </section>
 {% endblock %}
 
 {% block scripts %}
-<script src="{% static 'assets/bundles/libscripts.bundle.js' %}"></script> <!-- Lib Scripts Plugin Js -->
-<script src="{% static 'assets/bundles/vendorscripts.bundle.js' %}"></script> <!-- Lib Scripts Plugin Js -->
 
-<script src="{% static 'assets/bundles/mainscripts.bundle.js' %}"></script><!-- Custom Js -->
+<script src={% static "assets/bundles/knob.bundle.js" %}></script> <!-- Jquery Knob Plugin Js -->
+<script src={% static "assets/bundles/morrisscripts.bundle.js" %}></script> <!-- Morris Plugin Js -->
 
-<script>
-    $(".list_btn").on('click', function () {
-        $("#plist").toggleClass("open");
-    });
-    $(".chat-header .btn-detail").on('click', function () {
-        $(".chat .user_detail").toggleClass("show");
-    });
-</script>
-<script src="{% static 'assets/bundles/knob.bundle.js' %}"></script> <!-- Jquery Knob Plugin Js -->
-<script src="{% static 'assets/bundles/morrisscripts.bundle.js' %}"></script> <!-- Morris Plugin Js -->
-<script src="{% static 'assets/bundles/fullcalendarscripts.bundle.js' %}"></script>
-<!--/ calender javascripts -->
+<!-- <script src={% static "assets/bundles/mainscripts.bundle.js" %}></script> -->
+<script src={% static "assets/js/pages/profile.js" %}></script>
+<script src={% static "assets/bundles/vendorscripts.bundle.js"%}></script> <!-- Lib Scripts Plugin Js -->
 
-<script src="{% static 'assets/bundles/mainscripts.bundle.js' %}"></script>
-<script src="{% static 'assets/js/pages/calendar/calendar.js' %}"></script>
-<script src="{% static 'assets/js/pages/profile.js' %}"></script>
+<script src={% static "assets/bundles/sparkline.bundle.js" %}></script> <!-- sparkline Plugin Js -->
+<script src={% static "assets/bundles/jvectormap.bundle.js" %}></script> <!-- JVectorMap Plugin Js -->
 
-<script src="{% static 'assets/bundles/sparkline.bundle.js' %}"></script> <!-- sparkline Plugin Js -->
-<script src="{% static 'assets/bundles/jvectormap.bundle.js' %}"></script> <!-- JVectorMap Plugin Js -->
 {% endblock %}
