@@ -5,10 +5,9 @@ from django.utils import timezone
 
 class Appointment(models.Model):
     patient = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='patient')
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='app_patient')
     doctor = models.ForeignKey(
-        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='doctor')
-    date = models.DateField(default=timezone.now)
-    time = models.AutoDateTimeField(default=timezone.now)
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='app_doctor')
+    time = models.DateTimeField(default=timezone.now)
     
     
