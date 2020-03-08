@@ -14,7 +14,7 @@ def chatView(request, room):
     if request.user.id not in (current_room.patient.id, current_room.doctor.id):
         raise Http404('Chat room not found!')
     chats = Chat.objects.filter(room=current_room).order_by('created')
-    patientData = PatientData.objects.get(patient=request.user)
+    patientData = PatientData.objects.get(patient=current_room.patient)
     sleepData = SleepData.objects.filter(patient=patientData)
     foodData = FoodData.objects.filter(patient=patientData)
     pressureData = PressureData.objects.filter(patient=patientData)

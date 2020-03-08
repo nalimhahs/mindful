@@ -4,6 +4,7 @@ from forum.models import Thread, Post
 from django.contrib.auth.decorators import login_required
 from users.models import CustomUser as User
 from livechat.models import ChatRoom
+from django.db.models import Q
 
 @login_required
 def getPatientDataView(request):
@@ -14,7 +15,7 @@ def getPatientDataView(request):
     pressureData = PressureData.objects.filter(patient=patientData)
     threads = Thread.objects.filter(
         post__in=Post.objects.filter(user=request.user))
-    chats = ChatRoom.objects.filter(patient=request.user)
+    chats = ChatRoom.objects.filter(Q(patient=request.user) | Q(doctor=request.user))
     return render(request, 'patientdata/data-dash.html', {'patientData': patientData, 'sleepData': sleepData, 'foodData': foodData, 'pressureData': pressureData, 'threads': threads, 'chats': chats})
 
 
